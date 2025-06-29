@@ -1,0 +1,60 @@
+LINEAR ALGEBRA MODULE
+====================
+
+Course: 20MCA101 - Discrete Mathematics
+Module: 4 - Linear Algebra
+Duration: 11 Hours
+
+TOPICS COVERED:
+---------------
+
+1. Linear Systems
+   - Systems of linear equations
+   - Gaussian elimination
+   - Row reduction and echelon forms
+   - Solutions: unique, infinite, or none
+
+2. Matrix Operations
+   - Matrix addition and multiplication
+   - Transpose and inverse
+   - Determinants and properties
+   - Elementary row operations
+
+3. Eigen Values and Vectors
+   - Characteristic equation
+   - Eigenvalues and eigenvectors
+   - Diagonalization
+   - Applications in computer graphics
+
+4. Diagonalization
+   - Similar matrices
+   - Diagonalizable matrices
+   - Jordan canonical form
+   - Power of matrices
+
+LEARNING OBJECTIVES:
+--------------------
+- Solve systems of linear equations using matrices
+- Perform matrix operations efficiently
+- Find eigenvalues and eigenvectors
+- Apply linear algebra concepts to computer science problems
+
+ASSESSMENT:
+-----------
+- Assignments: 40%
+- Quizzes: 20%
+- Final Exam: 40%
+
+REFERENCES:
+-----------
+1. Linear Algebra and Its Applications by Gilbert Strang
+2. Introduction to Linear Algebra by Serge Lang
+3. Matrix Analysis and Applied Linear Algebra by Carl Meyer
+
+PRACTICAL APPLICATIONS:
+-----------------------
+- Computer graphics and animation
+- Machine learning algorithms
+- Network analysis
+- Cryptography
+- Data compression 

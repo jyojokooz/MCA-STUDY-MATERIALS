@@ -1,0 +1,96 @@
+function Header({ searchTerm, onSearchChange, selectedSemester, onSemesterChange, onQuestionPapersClick }) {
+  try {
+    return (
+      <header className="bg-[#f0f0f0] border-b-3 border-black p-4" data-name="header" data-file="components/Header.js">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center">
+                <div className="icon-graduation-cap text-2xl text-white"></div>
+              </div>
+              <div>
+                <h1 className="text-3xl font-black text-black">MCA Curriculum</h1>
+                <p className="text-base text-gray-600 mt-1">APJ Abdul Kalam Technological University</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-4">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search all courses..."
+                  value={searchTerm}
+                  onChange={(e) => onSearchChange(e.target.value)}
+                  className="w-72 px-5 py-3 rounded-lg border-3 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] focus:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.9)] transition-all text-base"
+                />
+                <div className="icon-search absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></div>
+              </div>
+              
+              <a
+                href="https://github.com/your-username/mca-curriculum-tracker"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-3 bg-gray-900 text-white font-bold text-sm rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.9)] hover:bg-gray-700 transition-all"
+              >
+                <div className="icon-github text-sm"></div>
+                <div className="icon-star text-sm"></div>
+                Star
+              </a>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {['Semester I', 'Semester II', 'Semester III', 'Semester IV'].map((sem, index) => (
+              <button
+                key={sem}
+                onClick={() => onSemesterChange(sem)}
+                className={`relative p-4 rounded-xl border-3 border-black font-black text-sm transition-all transform hover:scale-105 ${
+                  selectedSemester === sem 
+                    ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)]' 
+                    : 'bg-white text-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.9)]'
+                }`}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs opacity-75">SEM</span>
+                  <div className={`w-6 h-6 rounded-full border-2 border-black flex items-center justify-center text-xs font-black ${
+                    selectedSemester === sem ? 'bg-white text-blue-500' : 'bg-gray-100'
+                  }`}>
+                    {index + 1}
+                  </div>
+                </div>
+                <div className="text-left">
+                  <div className="text-base">{sem.split(' ')[1]}</div>
+                  <div className="text-xs opacity-75 mt-1">
+                    {curriculumData.getCoursesBySemester(sem).length} courses
+                  </div>
+                </div>
+              </button>
+            ))}
+            
+            {/* Question Papers Tab */}
+            <button
+              onClick={onQuestionPapersClick}
+              className="relative p-4 rounded-xl border-3 border-black font-black text-sm transition-all transform hover:scale-105 bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)]"
+            >
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs opacity-75">QP</span>
+                <div className="w-6 h-6 rounded-full border-2 border-white flex items-center justify-center text-xs font-black bg-white text-red-500">
+                  <div className="icon-file-text text-xs"></div>
+                </div>
+              </div>
+              <div className="text-left">
+                <div className="text-base">Papers</div>
+                <div className="text-xs opacity-75 mt-1">
+                  Previous Years
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </header>
+    );
+  } catch (error) {
+    console.error('Header component error:', error);
+    return null;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MCA Curriculum Tracker - APJ Abdul Kalam Technological University</title>
+    <meta name="description" content="Track your Master of Computer Applications curriculum progress and course details">
+    <meta name="keywords" content="MCA, curriculum, university, courses, academic, tracker">
+    <meta property="og:title" content="MCA Curriculum Tracker - APJ Abdul Kalam Technological University">
+    <meta property="og:description" content="Track your Master of Computer Applications curriculum progress and course details">
+    <meta name="twitter:title" content="MCA Curriculum Tracker - APJ Abdul Kalam Technological University">
+    <meta name="twitter:description" content="Track your Master of Computer Applications curriculum progress and course details">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <!-- Predefined Tailwind CSS, use it as needed, or update base on your -->
+    <style type="text/tailwindcss">
+    @layer base {
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+    }
+
+    @layer components {
+        .note-card {
+            @apply bg-white rounded-xl p-6 border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.9)] transition-all duration-200;
+        }
+        
+        .btn-primary {
+            @apply py-3 px-6 bg-blue-500 text-white font-black text-sm rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] active:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] transition-all duration-200;
+        }
+        
+        .btn-secondary {
+            @apply py-3 px-6 bg-white text-black font-black text-sm rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] active:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] transition-all duration-200;
+        }
+    }
+
+    @layer utilities {
+        .border-3 {
+            border-width: 3px;
+        }
+    }
+    </style>
+
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/SemesterCard.js"></script>
+    <script type="text/babel" src="components/CourseCard.js"></script>
+    <script type="text/babel" src="components/CategorySection.js"></script>
+    <script type="text/babel" src="components/CourseDetailPage.js"></script>
+    <script type="text/babel" src="components/TheoryModules.js"></script>
+    <script type="text/babel" src="components/LabQuestions.js"></script>
+    <script type="text/babel" src="components/Hero.js"></script>
+    <script type="text/babel" src="components/ProgressStats.js"></script>
+    <script type="text/babel" src="components/QuestionPapers.js"></script>
+    <script type="text/babel" src="components/QuestionPapersYear.js"></script>
+    <script type="text/babel" src="utils/curriculumData.js"></script>
+    <script type="text/babel" src="utils/courseContent.js"></script>
+    <script type="text/babel" src="utils/questionPapersData.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
