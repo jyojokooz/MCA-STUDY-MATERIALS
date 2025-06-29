@@ -47,22 +47,20 @@ function QuestionPapersYear({ selectedSemester, onBack }) {
             {years.map((year) => (
               <div
                 key={year}
-                className="bg-white rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all transform hover:scale-105 cursor-pointer"
-                onClick={() => handleDownload(year)}
+                className="bg-gray-100 rounded-xl border-3 border-gray-400 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] cursor-not-allowed opacity-75"
               >
                 <div className="p-4 text-center">
-                  <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center mx-auto mb-3">
-                    <div className="icon-file-pdf text-white text-sm"></div>
+                  <div className="w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center mx-auto mb-3">
+                    <div className="icon-clock text-white text-sm"></div>
                   </div>
                   
                   <div className="mb-2">
-                    <div className="text-lg font-black text-black">{year}</div>
+                    <div className="text-lg font-black text-gray-700">{year}</div>
                     <div className="text-xs text-gray-500">Question Paper</div>
                   </div>
                   
-                  <div className="flex items-center justify-center gap-1 text-xs font-bold text-blue-600">
-                    <div className="icon-download text-xs"></div>
-                    <span>Download</span>
+                  <div className="flex items-center justify-center">
+                    <span className="bg-red-500 text-white px-2 py-1 rounded font-bold text-xs border border-red-600 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">Uploading Soon</span>
                   </div>
                 </div>
               </div>

@@ -236,25 +236,33 @@ function App() {
               />
             </div>
           )}
-        </main>
-        
-        <footer className="bg-[#f0f0f0] border-t-3 border-black mt-16 py-8">
-          <div className="max-w-6xl mx-auto px-6">
+          
+          {/* Maintainer Section */}
+          <div className="mt-16 mb-8" data-name="maintainer-section">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center">
+                <div className="icon-user text-white text-lg"></div>
+              </div>
+              <div>
+                <h3 className="text-xl font-black text-black">Developer & Maintainer</h3>
+                <p className="text-sm text-gray-600">BrainFuel by zoxilsi</p>
+              </div>
+            </div>
+            
             <div className="bg-white rounded-xl p-6 border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)]">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center">
-                    <div className="icon-user text-2xl text-white"></div>
-                  </div>
+                  <img src="assets/abhi.jpg" alt="ABHIJITH T" className="w-16 h-16 object-cover rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)]" />
                   <div>
-                    <h3 className="text-xl font-black text-black">Maintainer</h3>
-                    <p className="text-gray-600 font-bold">Built with ❤️ for MCA Students</p>
+                    <h3 className="text-xl font-black text-black">ABHIJITH T</h3>
+                    <p className="text-gray-600 font-bold">Vibe Coder</p>
+                    <p className="text-sm text-gray-500 mt-1">MCA 2024-2026</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-4">
                   <a
-                    href="https://github.com"
+                    href="https://github.com/zoxilsi"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-gray-900 hover:bg-gray-700 rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center transition-all"
@@ -263,7 +271,7 @@ function App() {
                   </a>
                   
                   <a
-                    href="https://linkedin.com"
+                    href="https://linkedin.com/in/zoxilsi"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-blue-600 hover:bg-blue-500 rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center transition-all"
@@ -272,7 +280,7 @@ function App() {
                   </a>
                   
                   <a
-                    href="https://twitter.com"
+                    href="https://twitter.com/zoxilsi"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-sky-500 hover:bg-sky-400 rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center transition-all"
@@ -281,7 +289,7 @@ function App() {
                   </a>
                   
                   <a
-                    href="mailto:maintainer@example.com"
+                    href="mailto:24mp2275@rit.ac.in"
                     className="w-12 h-12 bg-green-600 hover:bg-green-500 rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center transition-all"
                   >
                     <div className="icon-mail text-white text-lg"></div>
@@ -291,12 +299,15 @@ function App() {
               
               <div className="mt-6 pt-6 border-t-2 border-gray-200 text-center">
                 <p className="text-gray-600 font-bold">
-                  © 2024 MCA Curriculum Tracker. Made for students, by students.
+                  © 2025 MCA study materials. Made for students, by students.
+                </p>
+                <p className="text-sm text-gray-500 mt-2">
+                  Empowering MCA students with comprehensive study materials and resources
                 </p>
               </div>
             </div>
           </div>
-        </footer>
+        </main>
       </div>
     );
   } catch (error) {

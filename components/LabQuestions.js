@@ -75,6 +75,19 @@ function LabQuestions({ course }) {
     return (
       <div className={`min-h-screen ${lab.bgColor} py-16`}>
         <div className="max-w-4xl mx-auto px-6">
+          {/* Fair Record Section */}
+          <div className="mb-6 flex flex-wrap gap-4 items-center justify-center bg-white rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] p-3">
+            <a href="#" className="flex items-center gap-2 px-3 py-2 rounded bg-blue-50 border border-blue-200 hover:bg-blue-100 transition text-blue-700 text-sm font-bold">
+              <span className="icon-file-word text-lg text-blue-600"></span> DOCX
+            </a>
+            <a href="#" className="flex items-center gap-2 px-3 py-2 rounded bg-red-50 border border-red-200 hover:bg-red-100 transition text-red-700 text-sm font-bold">
+              <span className="icon-file-pdf text-lg text-red-600"></span> PDF
+            </a>
+            <a href="#" className="flex items-center gap-2 px-3 py-2 rounded bg-yellow-50 border border-yellow-200 hover:bg-yellow-100 transition text-yellow-700 text-sm font-bold">
+              <span className="icon-file-text text-lg text-yellow-600"></span> LaTeX
+            </a>
+          </div>
+
           {/* Header Section */}
           <div className="text-center mb-12">
             <div className="relative inline-block mb-6">
@@ -87,7 +100,7 @@ function LabQuestions({ course }) {
             </div>
             
             <h1 className="text-4xl font-black text-gray-800 mb-4">
-              🚀 {lab.name} Coming Soon!
+              Lab Questions Coming Soon!
             </h1>
             <p className="text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
               {lab.description}
@@ -100,42 +113,22 @@ function LabQuestions({ course }) {
             </div>
           </div>
 
-          {/* Progress Section */}
-          <div className="bg-white rounded-xl p-8 border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] mb-8">
-            <h2 className="text-2xl font-black text-gray-800 mb-6 text-center">Development Progress</h2>
-            
-            <div className="space-y-6">
-              {/* Progress Bar */}
-              <div>
-                <div className="flex justify-between text-sm font-bold text-gray-600 mb-2">
-                  <span>Lab Setup</span>
-                  <span>85%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-4 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">
-                  <div className={`bg-gradient-to-r ${lab.color} h-full rounded-full animate-pulse`} style={{width: '85%'}}></div>
-                </div>
-              </div>
-              
-              <div>
-                <div className="flex justify-between text-sm font-bold text-gray-600 mb-2">
-                  <span>Project Development</span>
-                  <span>60%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-4 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">
-                  <div className={`bg-gradient-to-r ${lab.color} h-full rounded-full animate-pulse`} style={{width: '60%'}}></div>
-                </div>
-              </div>
-              
-              <div>
-                <div className="flex justify-between text-sm font-bold text-gray-600 mb-2">
-                  <span>Documentation</span>
-                  <span>40%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-4 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">
-                  <div className={`bg-gradient-to-r ${lab.color} h-full rounded-full animate-pulse`} style={{width: '40%'}}></div>
-                </div>
-              </div>
-            </div>
+          {/* Minimal Contribution Section */}
+          <div className="bg-white rounded-xl p-4 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] mb-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button
+              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center gap-2 transition-all"
+              onClick={() => window.open(lab.githubRepo + '/issues/new', '_blank')}
+            >
+              <span className="icon-code text-lg"></span>
+              Submit Code
+            </button>
+            <button
+              className="px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-black font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center gap-2 transition-all"
+              onClick={() => window.open('mailto:24mp2275@rit.ac.in?subject=Lab Notes for ' + course.code, '_blank')}
+            >
+              <span className="icon-book text-lg"></span>
+              Submit Notes
+            </button>
           </div>
 
           {/* Repository Links Section */}
@@ -172,116 +165,6 @@ function LabQuestions({ course }) {
               </div>
             </div>
           </div>
-
-          {/* Contribution Section */}
-          <div className="bg-white rounded-xl p-8 border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] mb-8">
-            <h2 className="text-2xl font-black text-gray-800 mb-6 text-center">🤝 Help Us Build This Lab!</h2>
-            
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-10 h-10 bg-gradient-to-r ${lab.color} rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center`}>
-                    <span className="icon-code text-white text-lg"></span>
-                  </div>
-                  <h3 className="text-lg font-black text-gray-800">Share Your Code</h3>
-                </div>
-                <p className="text-gray-600 mb-4">Contribute your lab solutions, projects, and code examples to help fellow students learn.</p>
-                <button 
-                  className={`w-full px-4 py-2 bg-gradient-to-r ${lab.color} text-white font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all`}
-                  onClick={() => window.open(lab.githubRepo + '/issues/new', '_blank')}
-                >
-                  Submit Code
-                </button>
-              </div>
-              
-              <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-10 h-10 bg-gradient-to-r ${lab.color} rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center`}>
-                    <span className="icon-book text-white text-lg"></span>
-                  </div>
-                  <h3 className="text-lg font-black text-gray-800">Share Notes</h3>
-                </div>
-                <p className="text-gray-600 mb-4">Upload your lab notes, explanations, and study materials to help others understand the concepts better.</p>
-                <button 
-                  className={`w-full px-4 py-2 bg-gradient-to-r ${lab.color} text-white font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all`}
-                  onClick={() => window.open('mailto:notes@mca-website.com?subject=Lab Notes for ' + course.code, '_blank')}
-                >
-                  Upload Notes
-                </button>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <p className="text-gray-600 mb-4">
-                <strong>💡 Pro Tip:</strong> Your contributions will be credited and help build a comprehensive learning resource for all MCA students!
-              </p>
-              <div className="flex gap-4 justify-center flex-wrap">
-                <button 
-                  className="px-6 py-3 bg-blue-500 text-white font-bold rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.9)] transition-all flex items-center gap-2"
-                  onClick={() => window.open('https://github.com/mca-website/contribution-guidelines', '_blank')}
-                >
-                  <span className="icon-file-text text-lg"></span>
-                  Contribution Guidelines
-                </button>
-                
-                <button 
-                  className="px-6 py-3 bg-green-500 text-white font-bold rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.9)] transition-all flex items-center gap-2"
-                  onClick={() => window.open('https://discord.gg/mca-students', '_blank')}
-                >
-                  <span className="icon-message-circle text-lg"></span>
-                  Join Community
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Features Section */}
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-white rounded-xl p-6 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)]">
-              <div className="flex items-center gap-3 mb-4">
-                <div className={`w-10 h-10 bg-gradient-to-r ${lab.color} rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center`}>
-                  <span className="icon-play text-white text-lg"></span>
-                </div>
-                <h3 className="text-lg font-black text-gray-800">Hands-on Projects</h3>
-              </div>
-              <p className="text-gray-600">Real-world projects that will build your portfolio and practical skills</p>
-            </div>
-            
-            <div className="bg-white rounded-xl p-6 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)]">
-              <div className="flex items-center gap-3 mb-4">
-                <div className={`w-10 h-10 bg-gradient-to-r ${lab.color} rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center`}>
-                  <span className="icon-users text-white text-lg"></span>
-                </div>
-                <h3 className="text-lg font-black text-gray-800">Expert Guidance</h3>
-              </div>
-              <p className="text-gray-600">Step-by-step tutorials and expert tips to master the concepts</p>
-            </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="text-center space-y-4">
-            <div className="flex gap-4 justify-center flex-wrap">
-              <button 
-                className={`px-8 py-4 bg-gradient-to-r ${lab.color} text-white font-bold rounded-lg border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all flex items-center gap-2`}
-                onClick={() => window.open(lab.githubRepo, '_blank')}
-              >
-                <span className="icon-github text-xl"></span>
-                Contribute Code
-              </button>
-              
-              <button 
-                className="px-8 py-4 bg-blue-500 text-white font-bold rounded-lg border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all flex items-center gap-2"
-                onClick={() => window.open('mailto:contact@mca-website.com?subject=Lab Request for ' + course.code, '_blank')}
-              >
-                <span className="icon-mail text-xl"></span>
-                Request Lab
-              </button>
-            </div>
-            
-            <p className="text-sm text-gray-500">
-              Be the first to know when this lab is ready! 🎯
-            </p>
-          </div>
         </div>
       </div>
     );
@@ -302,7 +185,7 @@ function LabQuestions({ course }) {
       
       {/* Main Heading */}
       <h2 className="text-3xl font-black text-yellow-700 mb-4 text-center">
-        🚀 Lab Questions Coming Soon!
+        Lab Questions Coming Soon!
       </h2>
       
       {/* Subtitle */}

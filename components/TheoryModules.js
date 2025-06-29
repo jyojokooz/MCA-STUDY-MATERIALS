@@ -75,7 +75,7 @@ function TheoryModules({ courseCode }) {
             </div>
             
             <h1 className="text-4xl font-black text-gray-800 mb-4">
-              🚀 {lab.name} Coming Soon!
+              {lab.name} Coming Soon!
             </h1>
             <p className="text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
               {lab.description}
@@ -162,7 +162,7 @@ function TheoryModules({ courseCode }) {
               
               <button 
                 className="px-8 py-4 bg-blue-500 text-white font-bold rounded-lg border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all flex items-center gap-2"
-                onClick={() => window.open('mailto:contact@mca-website.com?subject=Lab Request for ' + courseCode, '_blank')}
+                onClick={() => window.open('mailto:24mp2275@rit.ac.in?subject=Lab Request for ' + courseCode, '_blank')}
               >
                 <span className="icon-mail text-xl"></span>
                 Request Lab
@@ -500,67 +500,27 @@ function TheoryModules({ courseCode }) {
   // Default case for courses without notes - Show Coming Soon
   return (
     <div className="flex flex-col items-center justify-center py-16">
-      {/* Animated Coming Soon Icon */}
-      <div className="relative mb-8">
-        <div className="w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full border-4 border-yellow-600 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center animate-pulse">
-          <span className="icon-hourglass text-4xl text-white animate-spin"></span>
-        </div>
-        <div className="absolute -top-2 -right-2 w-8 h-8 bg-red-500 rounded-full border-2 border-white shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center">
-          <span className="icon-clock text-sm text-white"></span>
-        </div>
+      <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center mb-4">
+        <span className="icon-book-open text-white text-3xl"></span>
       </div>
-      
-      {/* Main Heading */}
-      <h2 className="text-3xl font-black text-yellow-700 mb-4 text-center">
-        🚀 Notes Coming Soon!
+      <h2 className="text-3xl font-black text-pink-600 mb-4 text-center">
+        Notes Coming Soon!
       </h2>
-      
-      {/* Subtitle */}
       <p className="text-lg text-gray-600 mb-6 text-center max-w-md">
-        We're working hard to bring you comprehensive notes for <span className="font-bold text-black">{courseCode}</span>. 
-        Stay tuned for amazing content!
+        We're working hard to bring you comprehensive notes for <span className="font-bold text-black">{courseCode}</span>. Stay tuned for amazing content!
       </p>
-      
-      {/* Progress Bar */}
-      <div className="w-64 bg-gray-200 rounded-full h-3 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] mb-6">
-        <div className="bg-gradient-to-r from-yellow-400 to-orange-500 h-full rounded-full animate-pulse" style={{width: '75%'}}></div>
-      </div>
-      
-      {/* Status Badge */}
-      <div className="px-4 py-2 bg-yellow-100 border-2 border-yellow-500 rounded-lg text-yellow-700 font-bold mb-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">
-        <span className="icon-trending-up text-sm mr-2"></span>
-        In Development - 75% Complete
-      </div>
-      
-      {/* Action Buttons */}
-      <div className="flex gap-4 flex-wrap justify-center">
-        <button 
-          className="px-6 py-3 bg-yellow-500 text-white font-bold rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.9)] hover:bg-yellow-600 transition-all flex items-center gap-2"
-          onClick={() => window.open('https://github.com/your-repo/contribute', '_blank')}
-        >
-          <span className="icon-github text-lg"></span>
-          Contribute Notes
-        </button>
-        
-        <button 
-          className="px-6 py-3 bg-blue-500 text-white font-bold rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.9)] hover:bg-blue-600 transition-all flex items-center gap-2"
-          onClick={() => window.open('mailto:contact@mca-website.com?subject=Notes Request for ' + courseCode, '_blank')}
-        >
-          <span className="icon-mail text-lg"></span>
-          Request Notes
-        </button>
-      </div>
-      
-      {/* Fun Facts */}
-      <div className="mt-8 p-4 bg-gray-50 rounded-lg border-2 border-gray-300 max-w-md">
-        <h4 className="font-bold text-gray-800 mb-2 flex items-center gap-2">
-          <span className="icon-lightbulb text-yellow-500"></span>
-          Did You Know?
-        </h4>
-        <p className="text-sm text-gray-600">
-          Our notes are created by students, for students! Each module is carefully crafted to make learning easier and more engaging.
-        </p>
-      </div>
+      <p className="text-base text-gray-700 mb-4 text-center max-w-md">
+        Want to help? <a href="https://github.com/zoxilsi/MCA-STUDY-MATERIALS" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline font-bold">Contribute & Share on GitHub</a> to make this website better for everyone!
+      </p>
+      <a
+        href="https://github.com/zoxilsi/MCA-STUDY-MATERIALS"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-2 px-5 py-2 bg-gray-900 hover:bg-gray-700 text-white font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] transition-all"
+      >
+        <span className="icon-github text-lg mr-2"></span>
+        View & Contribute on GitHub
+      </a>
     </div>
   );
 }

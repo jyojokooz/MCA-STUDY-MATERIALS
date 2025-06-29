@@ -9,8 +9,9 @@ function Header({ searchTerm, onSearchChange, selectedSemester, onSemesterChange
                 <div className="icon-graduation-cap text-2xl text-white"></div>
               </div>
               <div>
-                <h1 className="text-3xl font-black text-black">MCA Curriculum</h1>
-                <p className="text-base text-gray-600 mt-1">APJ Abdul Kalam Technological University</p>
+                <h1 className="text-3xl font-black text-black">MCA Notes | KTU</h1>
+                <p className="text-base text-gray-600 mt-1">RAJIV GANDHI INSTITUTE OF TECHNOLOGY, KOTTAYAM
+                </p>
               </div>
             </div>
             
@@ -27,7 +28,7 @@ function Header({ searchTerm, onSearchChange, selectedSemester, onSemesterChange
               </div>
               
               <a
-                href="https://github.com/your-username/mca-curriculum-tracker"
+                href="https://github.com/zoxilsi/MCA-STUDY-MATERIALS"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-3 bg-gray-900 text-white font-bold text-sm rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.9)] hover:bg-gray-700 transition-all"
@@ -39,7 +40,7 @@ function Header({ searchTerm, onSearchChange, selectedSemester, onSemesterChange
             </div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {['Semester I', 'Semester II', 'Semester III', 'Semester IV'].map((sem, index) => (
               <button
                 key={sem}
@@ -79,9 +80,33 @@ function Header({ searchTerm, onSearchChange, selectedSemester, onSemesterChange
                 </div>
               </div>
               <div className="text-left">
-                <div className="text-base">Papers</div>
+                <div className="text-base">
+                  Question Papers
+                </div>
                 <div className="text-xs opacity-75 mt-1">
                   Previous Years
+                </div>
+              </div>
+            </button>
+            
+            {/* RIT Internal Exam Question Papers Tab */}
+            <button
+              className="relative p-4 rounded-xl border-3 border-black font-black text-sm bg-gray-300 text-gray-600 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] cursor-not-allowed opacity-75"
+              disabled
+            >
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs opacity-75">RIT</span>
+                <div className="w-6 h-6 rounded-full border-2 border-gray-400 flex items-center justify-center text-xs font-black bg-gray-200 text-gray-500">
+                  <div className="icon-clock text-xs"></div>
+                </div>
+              </div>
+              <div className="text-left">
+                <div className="text-base mb-1">
+                  <span className="bg-gray-200 text-gray-700 px-2 py-1 rounded font-extrabold border-2 border-gray-300 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">Internal Exam</span>
+                </div>
+                <div className="text-xs opacity-75">
+                  <span className="bg-red-500 text-white px-1 py-0.5 rounded font-bold text-xs border border-red-600">Coming Soon</span>
+                  <div className="text-xs text-gray-500 mt-1">RIT Kottayam</div>
                 </div>
               </div>
             </button>

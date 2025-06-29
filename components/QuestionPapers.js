@@ -31,6 +31,19 @@ function QuestionPapers({ onBack }) {
             </div>
           </div>
 
+          {/* Uploading Soon Notice */}
+          <div className="mb-8 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-xl p-6 border-3 border-yellow-400 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)]">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center">
+                <div className="icon-upload text-white text-lg"></div>
+              </div>
+              <div>
+                <h3 className="text-lg font-black text-yellow-800 mb-1">Uploading Soon!</h3>
+                <p className="text-yellow-700 text-sm">We're preparing comprehensive question papers for all semesters. Stay tuned!</p>
+              </div>
+            </div>
+          </div>
+
           {/* Semesters Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {semesters.map((semester, index) => (
@@ -78,7 +91,7 @@ function QuestionPapers({ onBack }) {
           {/* Additional Info */}
           <div className="mt-12 bg-white rounded-xl p-6 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)]">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center">
                 <div className="icon-info text-white text-lg"></div>
               </div>
               <div>
