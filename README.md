@@ -4,8 +4,6 @@
 
 # 📚 MCA STUDY MATERIALS
 
-![MCA Study Materials Animation](https://i.imgur.com/0v2kULU.gif)
-
 A minimal and user-friendly website for sharing MCA semester-wise notes and question papers. Built for simplicity and long-term access — no logins, no ads, just pure notes.
 
 🌐 [Live Demo](https://mca-study-materials.vercel.app)
@@ -44,12 +42,6 @@ A minimal and user-friendly website for sharing MCA semester-wise notes and ques
 - ⚡ Fast, Static Deployment
 - ☁️ Hosted Free on Vercel
 - 📦 No Backend / No DB — Just Files
-
----
-
-## 📸 Screenshots
-
-> ![Demo UI](https://i.imgur.com/0v2kULU.gif)
 
 ---
 
