@@ -2,7 +2,6 @@
 [![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=zoxilsi/mca-study-materials@github)](https://gitads.dev/v1/ad-track?source=zoxilsi/mca-study-materials@github)
 
 
-
 # 📚 MCA STUDY MATERIALS
 
 ![MCA Study Materials Animation](https://i.imgur.com/0v2kULU.gif)
@@ -78,14 +77,8 @@ We welcome all contributors! Here's how you can help:
 
 Thanks to all the amazing people who have contributed so far:
 
-<a href="https://github.com/zoxilsi/MCA-STUDY-MATERIALS/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=zoxilsi/MCA-STUDY-MATERIALS" />
-</a>
-
-### 🙋‍♂️ Notable Contributors
-
-- [@zoxilsi](https://github.com/zoxilsi)
-- [@24mp2301](https://github.com/24mp2301)
+<a href="https://github.com/zoxilsi"><img src="https://avatars.githubusercontent.com/u/16407715?v=4" width="80" alt="@zoxilsi"/></a>
+<a href="https://github.com/24mp2301"><img src="https://avatars.githubusercontent.com/u/179002235?v=4" width="80" alt="@24mp2301"/></a>
 
 ---
 
