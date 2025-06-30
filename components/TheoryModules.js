@@ -517,7 +517,7 @@ function TheoryModules({ courseCode }) {
         target="_blank"
         rel="noopener noreferrer"
         className="mt-2 px-5 py-2 bg-gray-900 hover:bg-gray-700 text-white font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] transition-all"
-      >
+        >
         <span className="icon-github text-lg mr-2"></span>
         View & Contribute on GitHub
       </a>

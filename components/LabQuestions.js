@@ -10,7 +10,7 @@ function LabQuestions({ course }) {
       borderColor: 'border-green-300',
       description: 'Master Python programming with hands-on projects and real-world applications',
       githubRepo: 'https://github.com/mca-website/python-lab-exercises',
-      gitlabRepo: 'https://gitlab.com/mca-website/python-lab-exercises'
+      gitlabRepo: 'https://gitlab.com/zoxilsi/PYTHON-LAB'
     },
     '20MCA133': {
       name: 'Web Programming Lab',
@@ -21,7 +21,7 @@ function LabQuestions({ course }) {
       borderColor: 'border-blue-300',
       description: 'Build stunning websites with modern web technologies and frameworks',
       githubRepo: 'https://github.com/mca-website/web-programming-lab',
-      gitlabRepo: 'https://gitlab.com/mca-website/web-programming-lab'
+      gitlabRepo: 'https://gitlab.com/zoxilsi/WEB-LAB'
     },
     '20MCA135': {
       name: 'Data Structures Lab',
@@ -32,7 +32,7 @@ function LabQuestions({ course }) {
       borderColor: 'border-purple-300',
       description: 'Implement advanced data structures and algorithms in C++',
       githubRepo: 'https://github.com/mca-website/data-structures-lab',
-      gitlabRepo: 'https://gitlab.com/mca-website/data-structures-lab'
+      gitlabRepo: 'https://gitlab.com/zoxilsi/ds-lab'
     },
     '20MCA132': {
       name: 'Object Oriented Programming Lab',
@@ -43,7 +43,7 @@ function LabQuestions({ course }) {
       borderColor: 'border-orange-300',
       description: 'Learn OOP concepts with Java programming and design patterns',
       githubRepo: 'https://github.com/mca-website/oop-java-lab',
-      gitlabRepo: 'https://gitlab.com/mca-website/oop-java-lab'
+      gitlabRepo: 'https://gitlab.com/zoxilsi/OOP'
     },
     '20MCA134': {
       name: 'Advanced DBMS Lab',
@@ -54,7 +54,7 @@ function LabQuestions({ course }) {
       borderColor: 'border-indigo-300',
       description: 'Master database management with SQL queries and optimization',
       githubRepo: 'https://github.com/mca-website/dbms-lab-exercises',
-      gitlabRepo: 'https://gitlab.com/mca-website/dbms-lab-exercises'
+      gitlabRepo: 'https://gitlab.com/zoxilsi/dbms'
     },
     '20MCA136': {
       name: 'Networking & System Administration Lab',
@@ -65,7 +65,7 @@ function LabQuestions({ course }) {
       borderColor: 'border-gray-300',
       description: 'Configure networks and manage systems with Linux commands',
       githubRepo: 'https://github.com/mca-website/networking-lab',
-      gitlabRepo: 'https://gitlab.com/mca-website/networking-lab'
+      gitlabRepo: 'https://gitlab.com/zoxilsi/computer-network-and-system-administrtion'
     }
   };
 
@@ -74,97 +74,86 @@ function LabQuestions({ course }) {
     const lab = labCourses[course.code];
     return (
       <div className={`min-h-screen ${lab.bgColor} py-16`}>
-        <div className="max-w-4xl mx-auto px-6">
-          {/* Fair Record Section */}
-          <div className="mb-6 flex flex-wrap gap-4 items-center justify-center bg-white rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] p-3">
-            <a href="#" className="flex items-center gap-2 px-3 py-2 rounded bg-blue-50 border border-blue-200 hover:bg-blue-100 transition text-blue-700 text-sm font-bold">
-              <span className="icon-file-word text-lg text-blue-600"></span> DOCX
-            </a>
-            <a href="#" className="flex items-center gap-2 px-3 py-2 rounded bg-red-50 border border-red-200 hover:bg-red-100 transition text-red-700 text-sm font-bold">
-              <span className="icon-file-pdf text-lg text-red-600"></span> PDF
-            </a>
-            <a href="#" className="flex items-center gap-2 px-3 py-2 rounded bg-yellow-50 border border-yellow-200 hover:bg-yellow-100 transition text-yellow-700 text-sm font-bold">
-              <span className="icon-file-text text-lg text-yellow-600"></span> LaTeX
-            </a>
-          </div>
-
-          {/* Header Section */}
-          <div className="text-center mb-12">
-            <div className="relative inline-block mb-6">
-              <div className={`w-32 h-32 bg-gradient-to-r ${lab.color} rounded-full border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center animate-pulse`}>
-                <span className="text-6xl">{lab.icon}</span>
-              </div>
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-red-500 rounded-full border-3 border-white shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center animate-bounce">
-                <span className="icon-code text-white text-lg"></span>
-              </div>
+        <div className={`max-w-4xl mx-auto px-6 pt-12 pb-6`}>
+          <div className="flex items-center gap-4 mb-8">
+            <div className={`w-14 h-14 bg-gradient-to-r ${lab.color} rounded-lg border-3 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center`}>
+              <span className="text-3xl">{lab.icon}</span>
             </div>
-            
-            <h1 className="text-4xl font-black text-gray-800 mb-4">
-              Lab Questions Coming Soon!
-            </h1>
-            <p className="text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
-              {lab.description}
-            </p>
-            
-            {/* Language Badge */}
-            <div className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${lab.color} text-white font-bold rounded-full border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)]`}>
-              <span className="text-2xl">{lab.icon}</span>
-              <span className="text-lg">{lab.language}</span>
+            <div>
+              <h1 className="text-2xl font-black text-black mb-1">{lab.name} <span className="text-base font-bold text-gray-500">({course.code})</span></h1>
+              <p className="text-sm text-gray-600">{lab.description}</p>
             </div>
           </div>
+        </div>
 
-          {/* Minimal Contribution Section */}
-          <div className="bg-white rounded-xl p-4 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] mb-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        {/* Minimal Contribution Section */}
+        <div className="bg-white rounded-xl p-4 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] mb-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col md:flex-row gap-4 mt-6">
             <button
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center gap-2 transition-all"
-              onClick={() => window.open(lab.githubRepo + '/issues/new', '_blank')}
+              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white font-bold text-sm rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:bg-blue-700 transition-all"
+              onClick={() => window.open('https://github.com/zoxilsi/KTU_MCA_LAB_WORK', '_blank')}
             >
-              <span className="icon-code text-lg"></span>
+              <div className="icon-upload text-sm"></div>
               Submit Code
             </button>
             <button
-              className="px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-black font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center gap-2 transition-all"
+              className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white font-bold text-sm rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:bg-green-700 transition-all"
               onClick={() => window.open('mailto:24mp2275@rit.ac.in?subject=Lab Notes for ' + course.code, '_blank')}
             >
-              <span className="icon-book text-lg"></span>
+              <div className="icon-file-text text-sm"></div>
               Submit Notes
             </button>
           </div>
+        </div>
 
-          {/* Repository Links Section */}
-          <div className="bg-white rounded-xl p-8 border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] mb-8">
-            <h2 className="text-2xl font-black text-gray-800 mb-6 text-center">📚 Repository Links</h2>
+        {/* Repository Links Section */}
+        <div className="bg-white rounded-xl p-8 border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] mb-8">
+          <h2 className="text-2xl font-black text-gray-800 mb-6 text-center">
+            <span className="icon-book text-xl mr-2"></span>Repository Links
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="text-center">
+              <h3 className="text-lg font-black text-gray-800 mb-4">GitHub Repository</h3>
+              <a 
+                href={lab.githubRepo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${lab.color} text-white font-bold rounded-lg border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all`}
+              >
+                <span className="icon-github text-xl"></span>
+                View on GitHub
+              </a>
+              <p className="text-sm text-gray-600 mt-2">Find all lab exercises, solutions, and code examples</p>
+            </div>
             
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="text-center">
-                <h3 className="text-lg font-black text-gray-800 mb-4">GitHub Repository</h3>
-                <a 
-                  href={lab.githubRepo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${lab.color} text-white font-bold rounded-lg border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all`}
-                >
-                  <span className="icon-github text-xl"></span>
-                  View on GitHub
-                </a>
-                <p className="text-sm text-gray-600 mt-2">Find all lab exercises, solutions, and code examples</p>
-              </div>
-              
-              <div className="text-center">
-                <h3 className="text-lg font-black text-gray-800 mb-4">GitLab Repository</h3>
-                <a 
-                  href={lab.gitlabRepo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${lab.color} text-white font-bold rounded-lg border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all`}
-                >
-                  <span className="icon-gitlab text-xl"></span>
-                  View on GitLab
-                </a>
-                <p className="text-sm text-gray-600 mt-2">Alternative repository with CI/CD pipelines</p>
-              </div>
+            <div className="text-center">
+              <h3 className="text-lg font-black text-gray-800 mb-4">GitLab Repository</h3>
+              <a 
+                href={lab.gitlabRepo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${lab.color} text-white font-bold rounded-lg border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all`}
+              >
+                <span className="icon-gitlab text-xl"></span>
+                View on GitLab
+              </a>
+              <p className="text-sm text-gray-600 mt-2">Alternative repository with CI/CD pipelines</p>
             </div>
           </div>
+        </div>
+
+        {/* Additional Repository Links */}
+        <div className="flex flex-col gap-2 mt-8">
+          <a
+            href="https://github.com/zoxilsi/KTU_MCA_LAB_WORK"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white font-bold text-sm rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:bg-gray-700 transition-all"
+          >
+            <div className="icon-github text-base"></div>
+            Lab Work Repository
+          </a>
         </div>
       </div>
     );

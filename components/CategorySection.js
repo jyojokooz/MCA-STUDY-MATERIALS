@@ -19,7 +19,51 @@ function CategorySection({ title, courses, icon, color }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {sortedCourses.map(course => (
             course.active !== false ? (
-            <CourseCard key={course.code} course={course} onViewDetails={window.handleCourseDetails} />
+              course.code === '20MCA245' ? (
+                <div
+                  key={course.code}
+                  className="bg-purple-50 border-2 border-purple-400 rounded-xl p-6 flex flex-col items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,0.09)] select-none"
+                  style={{ minHeight: 200 }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 border-2 border-purple-600 rounded-full flex items-center justify-center mb-2">
+                    <span className="icon-lightbulb text-2xl text-white"></span>
+                  </div>
+                  <div className="text-xl font-black text-purple-700 mb-1">Mini Project Coming Soon</div>
+                  <div className="text-xs font-bold text-gray-500 mb-2">20MCA245</div>
+                  <div className="text-purple-700 font-semibold mb-2 text-center">Want to showcase your Mini Project? <br/> Email: <a href='mailto:24mp2275@rit.ac.in' className='underline text-blue-600'>24mp2275@rit.ac.in</a></div>
+                  <a
+                    href="https://github.com/zoxilsi/MCA_MINI_PROJECT"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs px-3 py-1 bg-purple-500 text-white font-bold rounded border-2 border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,0.9)] hover:bg-purple-600 transition-all mt-2"
+                  >
+                    Upload or View Mini Projects on GitHub
+                  </a>
+                </div>
+              ) : course.code === '20MCA246' ? (
+                <div
+                  key={course.code}
+                  className="bg-indigo-50 border-2 border-indigo-400 rounded-xl p-6 flex flex-col items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,0.09)] select-none"
+                  style={{ minHeight: 200 }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-500 border-2 border-indigo-600 rounded-full flex items-center justify-center mb-2">
+                    <span className="icon-award text-2xl text-white"></span>
+                  </div>
+                  <div className="text-xl font-black text-indigo-700 mb-1">Main Project Coming Soon</div>
+                  <div className="text-xs font-bold text-gray-500 mb-2">20MCA246</div>
+                  <div className="text-indigo-700 font-semibold mb-2 text-center">Want to showcase your Main Project? <br/> Email: <a href='mailto:24mp2275@rit.ac.in' className='underline text-blue-600'>24mp2275@rit.ac.in</a></div>
+                  <a
+                    href="https://github.com/zoxilsi/MCA_MAIN_PROJECT"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs px-3 py-1 bg-indigo-500 text-white font-bold rounded border-2 border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,0.9)] hover:bg-indigo-600 transition-all mt-2"
+                  >
+                    Upload or View Main Projects on GitHub
+                  </a>
+                </div>
+              ) : (
+                <CourseCard key={course.code} course={course} onViewDetails={window.handleCourseDetails} />
+              )
             ) : (
               <div
                 key={course.code}

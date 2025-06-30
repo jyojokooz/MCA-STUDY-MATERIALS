@@ -41,6 +41,7 @@ function App() {
     const [selectedCourse, setSelectedCourse] = React.useState(null);
     const [showQuestionPapers, setShowQuestionPapers] = React.useState(false);
     const [selectedQuestionPaperSemester, setSelectedQuestionPaperSemester] = React.useState(null);
+    const [selectedQuestionPaperSubject, setSelectedQuestionPaperSubject] = React.useState(null);
     
     const allCourses = curriculumData.getAllCourses();
     
@@ -66,10 +67,15 @@ function App() {
 
     const handleShowQuestionPapersForSemester = (semester) => {
       setSelectedQuestionPaperSemester(semester);
+      setSelectedQuestionPaperSubject(null);
     };
 
-    const handleBackFromQuestionPapersYear = () => {
-      setSelectedQuestionPaperSemester(null);
+    const handleShowQuestionPapersForSubject = (subject) => {
+      setSelectedQuestionPaperSubject(subject);
+    };
+
+    const handleBackFromQuestionPapersSubject = () => {
+      setSelectedQuestionPaperSubject(null);
     };
 
     // Make the semester navigation function globally available
@@ -113,11 +119,22 @@ function App() {
       );
     }
 
-    if (showQuestionPapers && selectedQuestionPaperSemester) {
+    if (showQuestionPapers && selectedQuestionPaperSemester && selectedQuestionPaperSubject) {
       return (
         <QuestionPapersYear 
           selectedSemester={selectedQuestionPaperSemester}
-          onBack={handleBackFromQuestionPapersYear}
+          selectedSubject={selectedQuestionPaperSubject}
+          onBack={handleBackFromQuestionPapersSubject}
+        />
+      );
+    }
+
+    if (showQuestionPapers && selectedQuestionPaperSemester) {
+      return (
+        <QuestionPapers 
+          selectedSemester={selectedQuestionPaperSemester}
+          onBack={handleBackFromQuestionPapers}
+          onSelectSubject={handleShowQuestionPapersForSubject}
         />
       );
     }

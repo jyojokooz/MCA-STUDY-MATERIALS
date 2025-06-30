@@ -1,4 +1,4 @@
-function QuestionPapers({ onBack }) {
+function QuestionPapers({ onBack, selectedSemester, onSelectSubject }) {
   try {
     const semesters = [
       { name: 'Semester I', number: 'I', icon: 'book-open' },
@@ -6,7 +6,199 @@ function QuestionPapers({ onBack }) {
       { name: 'Semester III', number: 'III', icon: 'flask-conical' },
       { name: 'Semester IV', number: 'IV', icon: 'folder-open' }
     ];
-
+    if (selectedSemester) {
+      const allSubjects = curriculumData.getCoursesBySemester(selectedSemester);
+      const theorySubjects = allSubjects.filter(subject => subject.type === 'Theory');
+      const electiveISubjects = allSubjects.filter(subject => subject.type === 'Elective I');
+      const electiveIISubjects = allSubjects.filter(subject => subject.type === 'Elective II');
+      const electiveIIISubjects = allSubjects.filter(subject => subject.type === 'Elective III');
+      const electiveIVSubjects = allSubjects.filter(subject => subject.type === 'Elective IV');
+      return (
+        <div className="min-h-screen bg-[#f0f0f0]" data-name="question-papers-subjects" data-file="components/QuestionPapers.js">
+          <div className="max-w-6xl mx-auto p-6">
+            <button
+              onClick={onBack}
+              className="flex items-center gap-2 px-4 py-2 bg-white text-black font-bold text-sm rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.9)] transition-all mb-4"
+            >
+              <div className="icon-arrow-left text-sm"></div>
+              Back to Semesters
+            </button>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center">
+                <div className="icon-file-text text-2xl text-white"></div>
+              </div>
+              <div>
+                <h1 className="text-3xl font-black text-black">{selectedSemester} Subjects</h1>
+                <p className="text-base text-gray-600 mt-1">Select a subject to view question papers</p>
+              </div>
+            </div>
+            {/* Theory Courses */}
+            {theorySubjects.length > 0 && (
+              <div className="mb-8">
+                <h2 className="text-xl font-bold text-black mb-4">Theory Courses</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {theorySubjects.map(subject => (
+                    <div
+                      key={subject.code}
+                      className="bg-white rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all transform hover:scale-105 cursor-pointer"
+                      onClick={() => onSelectSubject(subject)}
+                    >
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center">
+                            <div className="icon-book-open text-white text-lg"></div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-xs font-bold text-gray-500">{subject.code}</div>
+                          </div>
+                        </div>
+                        <div className="mb-4">
+                          <h3 className="text-lg font-black text-black mb-2">{subject.name}</h3>
+                          <p className="text-sm text-gray-600">View question papers from 2020-2025</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {/* Elective I Courses */}
+            {electiveISubjects.length > 0 && (
+              <div className="mb-8">
+                <h2 className="text-xl font-bold text-black mb-4">Elective I</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {electiveISubjects.map(subject => (
+                    <div
+                      key={subject.code}
+                      className="bg-white rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all transform hover:scale-105 cursor-pointer"
+                      onClick={() => onSelectSubject(subject)}
+                    >
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center">
+                            <div className="icon-book-open text-white text-lg"></div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-xs font-bold text-gray-500">{subject.code}</div>
+                          </div>
+                        </div>
+                        <div className="mb-4">
+                          <h3 className="text-lg font-black text-black mb-2">{subject.name}</h3>
+                          <p className="text-sm text-gray-600">View question papers from 2020-2025</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {/* Elective II Courses */}
+            {electiveIISubjects.length > 0 && (
+              <div className="mb-8">
+                <h2 className="text-xl font-bold text-black mb-4">Elective II</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {electiveIISubjects.map(subject => (
+                    <div
+                      key={subject.code}
+                      className="bg-white rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all transform hover:scale-105 cursor-pointer"
+                      onClick={() => onSelectSubject(subject)}
+                    >
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center">
+                            <div className="icon-book-open text-white text-lg"></div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-xs font-bold text-gray-500">{subject.code}</div>
+                          </div>
+                        </div>
+                        <div className="mb-4">
+                          <h3 className="text-lg font-black text-black mb-2">{subject.name}</h3>
+                          <p className="text-sm text-gray-600">View question papers from 2020-2025</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {/* Elective III Courses */}
+            {electiveIIISubjects.length > 0 && (
+              <div className="mb-8">
+                <h2 className="text-xl font-bold text-black mb-4">Elective III</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {electiveIIISubjects.map(subject => (
+                    <div
+                      key={subject.code}
+                      className="bg-white rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all transform hover:scale-105 cursor-pointer"
+                      onClick={() => onSelectSubject(subject)}
+                    >
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center">
+                            <div className="icon-book-open text-white text-lg"></div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-xs font-bold text-gray-500">{subject.code}</div>
+                          </div>
+                        </div>
+                        <div className="mb-4">
+                          <h3 className="text-lg font-black text-black mb-2">{subject.name}</h3>
+                          <p className="text-sm text-gray-600">View question papers from 2020-2025</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {/* Elective IV Courses */}
+            {electiveIVSubjects.length > 0 && (
+              <div className="mb-8">
+                <h2 className="text-xl font-bold text-black mb-4">Elective IV</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {electiveIVSubjects.map(subject => (
+                    <div
+                      key={subject.code}
+                      className="bg-white rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all transform hover:scale-105 cursor-pointer"
+                      onClick={() => onSelectSubject(subject)}
+                    >
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center">
+                            <div className="icon-book-open text-white text-lg"></div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-xs font-bold text-gray-500">{subject.code}</div>
+                          </div>
+                        </div>
+                        <div className="mb-4">
+                          <h3 className="text-lg font-black text-black mb-2">{subject.name}</h3>
+                          <p className="text-sm text-gray-600">View question papers from 2020-2025</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    }
+    if (selectedSemester === 'Semester III' || selectedSemester === 'Semester IV') {
+      return (
+        <div className="min-h-screen bg-[#f0f0f0] flex items-center justify-center" data-name="question-papers-coming-soon" data-file="components/QuestionPapers.js">
+          <div className="bg-white rounded-xl p-8 border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] flex flex-col items-center max-w-md mx-auto">
+            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full border-3 border-purple-600 flex items-center justify-center mb-4">
+              <span className="icon-hourglass text-3xl text-white"></span>
+            </div>
+            <h2 className="text-2xl font-black text-purple-700 mb-2 text-center">Question Papers Coming Soon</h2>
+            <p className="text-gray-600 text-center mb-2">We're preparing comprehensive question papers for {selectedSemester}. Stay tuned!</p>
+          </div>
+        </div>
+      );
+    }
     return (
       <div className="min-h-screen bg-[#f0f0f0]" data-name="question-papers" data-file="components/QuestionPapers.js">
         <div className="max-w-6xl mx-auto p-6">
