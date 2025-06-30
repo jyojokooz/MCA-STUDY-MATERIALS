@@ -308,7 +308,7 @@ function TheoryModules({ courseCode }) {
       {
         name: 'Text Book',
         files: [
-          { name: 'Text Book- Elaine Rich.pdf', path: 'notes/semester_ii/20MCA188/Text Book- Elaine Rich.pdf' },
+          { name: 'Text Book- Elaine Rich.pdf', path: 'notes/semester_ii/20MCA188/Text Book- Elaine Rich.pdf', copyrighted: true },
         ],
       },
     ];
@@ -335,15 +335,25 @@ function TheoryModules({ courseCode }) {
                 <div className="px-4 py-2 bg-yellow-100 border-2 border-yellow-500 rounded-lg text-yellow-700 font-semibold inline-block">Coming Soon</div>
               ) : (
                 module.files.map((file) => (
-                  <a
-                    key={file.name}
-                    href={file.path}
-                    download
-                    className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 font-semibold"
-                  >
-                    <span className="icon-download text-lg"></span>
-                    <span>{file.name}</span>
-                  </a>
+                  file.copyrighted ? (
+                    <div
+                      key={file.name}
+                      className="flex items-center gap-2 px-4 py-2 bg-gray-100 border-2 border-gray-300 rounded-lg text-gray-500 italic font-medium"
+                    >
+                      <span className="icon-lock text-lg"></span>
+                      <span>{file.name} – Copyrighted Material (Not Available for Download)</span>
+                    </div>
+                  ) : (
+                    <a
+                      key={file.name}
+                      href={file.path}
+                      download
+                      className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 font-semibold"
+                    >
+                      <span className="icon-download text-lg"></span>
+                      <span>{file.name}</span>
+                    </a>
+                  )
                 ))
               )}
             </div>
