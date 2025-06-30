@@ -10,8 +10,7 @@ function Header({ searchTerm, onSearchChange, selectedSemester, onSemesterChange
               </div>
               <div>
                 <h1 className="text-3xl font-black text-black">MCA Notes | KTU</h1>
-                <p className="text-base text-gray-600 mt-1">RAJIV GANDHI INSTITUTE OF TECHNOLOGY, KOTTAYAM
-                </p>
+                <p className="text-base text-gray-600 mt-1">APJ Abdul Kalam Technological University</p>
               </div>
             </div>
             
