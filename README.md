@@ -3,8 +3,9 @@
 
 
 
-
 # 📚 MCA STUDY MATERIALS
+
+![MCA Study Materials Animation](https://i.imgur.com/0v2kULU.gif)
 
 A minimal and user-friendly website for sharing MCA semester-wise notes and question papers. Built for simplicity and long-term access — no logins, no ads, just pure notes.
 
@@ -47,6 +48,12 @@ A minimal and user-friendly website for sharing MCA semester-wise notes and ques
 
 ---
 
+## 📸 Screenshots
+
+> ![Demo UI](https://i.imgur.com/0v2kULU.gif)
+
+---
+
 ## 🤝 Contributing
 
 We welcome all contributors! Here's how you can help:
@@ -74,6 +81,11 @@ Thanks to all the amazing people who have contributed so far:
 <a href="https://github.com/zoxilsi/MCA-STUDY-MATERIALS/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=zoxilsi/MCA-STUDY-MATERIALS" />
 </a>
+
+### 🙋‍♂️ Notable Contributors
+
+- [@zoxilsi](https://github.com/zoxilsi)
+- [@24mp2301](https://github.com/24mp2301)
 
 ---
 
