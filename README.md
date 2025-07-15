@@ -8,6 +8,9 @@ A minimal and user-friendly website for sharing MCA semester-wise notes and ques
 
 🌐 [Live Demo](https://mca-study-materials.vercel.app)
 
+<p align="center">
+  <img src="https://github.com/samad409/MCA-STUDY-MATERIALS/blob/main/readmegiff.gif" width="600" alt="MCA Study Materials Demo">
+</p>
 ---
 
 ## 📁 Project Structure
