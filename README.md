@@ -1,3 +1,7 @@
+## Selected for GSSoc 2025 phase - 3 Project
+<img width="300" height="168" alt="images" src="https://github.com/user-attachments/assets/f8cd59b8-8d0d-4178-9787-9de165724d12" />
+
+
 # 📚 MCA STUDY MATERIALS
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
