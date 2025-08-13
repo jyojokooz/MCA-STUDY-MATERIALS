@@ -9,28 +9,31 @@ style.textContent = `
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #2563eb;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Matches site theme */
     color: white;
     border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    border-radius: 14px; /* Same rounded card style */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, background 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     z-index: 9999;
+    font-size: 20px;
 }
 .back-to-top.visible { opacity: 1; }
-.back-to-top:hover { background-color: #1e40af; }
-.back-to-top .fa-solid { font-size: 24px; line-height: 1; }
+.back-to-top:hover { 
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #5b0fb6, #1f5fd6); /* Slightly darker hover */
+}
+.back-to-top .fa-solid { font-size: 24px; }
 `;
 document.head.appendChild(style);
 
-// Show/hide logic
 const toggleVisibility = () => {
   if (window.scrollY > 300) {
     backToTopButton.classList.add("visible");
