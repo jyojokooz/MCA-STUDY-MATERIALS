@@ -372,7 +372,7 @@ function TheoryModules({ courseCode }) {
       {
         name: 'MODULE 1',
         files: [
-          { name: 'Module 1.pdf', path: 'notes/semester_i/20MCA103/Module 1.pdf' },
+          { name: 'Module 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1S1LfaUv75YM4Shk__-WuCBZPXm6GYkLO' },
         ],
       },
       {
@@ -408,7 +408,7 @@ function TheoryModules({ courseCode }) {
           { name: 'Module 5 Part 2.pdf', path: 'notes/semester_i/20MCA103/Module 5 Part 2.pdf' },
           { name: 'Module 5 Part 3.pdf', path: 'notes/semester_i/20MCA103/Module 5 Part 3.pdf' },
           { name: 'Module 5 Part 4.pdf', path: 'notes/semester_i/20MCA103/Module 5 Part 4.pdf' },
-          { name: 'Module 5 Part 5.pdf', path: 'notes/semester_i/20MCA103/Module 5 Part 5.pdf' },
+          { name: 'Module 5 Part 5.pdf', path: 'https://drive.google.com/uc?export=download&id=1WEpLm0n4NS5N-RcXy6GU6iu8GQfwmk9V' },
         ],
       },
     ];
