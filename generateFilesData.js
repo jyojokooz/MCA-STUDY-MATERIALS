@@ -11,6 +11,10 @@ fs.createReadStream(inputCSV)
   .pipe(csv())
   .on('data', (row) => {
     const { semester, course_code, subject, module, part, link } = row;
+    if (!link) {  //this will allow code to not crash if csv rows empty sometimes
+    console.warn(`⚠️ Missing link for ${course_code} module ${module} part ${part}`);
+    return; 
+  }
 
     // Extract FILE_ID from Google Drive link
     const fileIdMatch = link.match(/\/d\/(.+?)\//);
