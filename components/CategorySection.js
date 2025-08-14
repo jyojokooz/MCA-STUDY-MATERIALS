@@ -77,7 +77,7 @@ function CategorySection({ title, courses, icon, color }) {
                 <div className="text-xs font-bold text-gray-500 mb-2">{course.code}</div>
                 <div className="text-yellow-700 font-semibold mb-2">Coming Soon</div>
                 <a
-                  href="https://github.com/your-repo/contribute"
+                  href="https://github.com/zoxilsi/MCA-KTU-STUDY-MATERIAL"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs px-3 py-1 bg-yellow-500 text-white font-bold rounded border-2 border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,0.9)] hover:bg-yellow-600 transition-all"

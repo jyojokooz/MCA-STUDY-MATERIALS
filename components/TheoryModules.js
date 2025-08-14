@@ -154,7 +154,7 @@ function TheoryModules({ courseCode }) {
             <div className="flex gap-4 justify-center flex-wrap">
               <button 
                 className={`px-8 py-4 bg-gradient-to-r ${lab.color} text-white font-bold rounded-lg border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] transition-all flex items-center gap-2`}
-                onClick={() => window.open('https://github.com/your-repo/contribute', '_blank')}
+                onClick={() => window.open('https://github.com/zoxilsi/MCA-KTU-STUDY-MATERIAL', '_blank')}
               >
                 <span className="icon-github text-xl"></span>
                 Contribute Code
@@ -321,7 +321,7 @@ function TheoryModules({ courseCode }) {
           </div>
           <h2 className="text-2xl font-black text-yellow-700 mb-2">Notes Coming Soon</h2>
           <p className="text-gray-600 mb-4">Notes for this subject will be available soon. Want to help?</p>
-          <a href="https://github.com/your-repo/contribute" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-yellow-500 text-white font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:bg-yellow-600 transition-all">Contribute Notes</a>
+          <a href="https://github.com/zoxilsi/MCA-KTU-STUDY-MATERIAL" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-yellow-500 text-white font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:bg-yellow-600 transition-all">Contribute Notes</a>
         </div>
       );
     }
@@ -360,7 +360,7 @@ function TheoryModules({ courseCode }) {
           </div>
         ))}
         <div className="mt-8 flex justify-center">
-          <a href="https://github.com/your-repo/contribute" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-yellow-500 text-white font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:bg-yellow-600 transition-all">Contribute Notes</a>
+          <a href="https://github.com/zoxilsi/MCA-KTU-STUDY-MATERIAL" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-yellow-500 text-white font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:bg-yellow-600 transition-all">Contribute Notes</a>
         </div>
       </div>
     );
