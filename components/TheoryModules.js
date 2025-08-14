@@ -265,53 +265,126 @@ function TheoryModules({ courseCode }) {
     );
   }
 
+  // Custom structure for 20MCA107 Advanced Software Engineering
+if (courseCode === '20MCA107') {
+  const modules = [
+    {
+      name: 'MODULE 1',
+      files: [
+        { name: 'Module 1 part 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1duMz6xZZOsuGbl2gL6t9vXWt3gU3mfKQ' },
+        { name: 'Module 1 part 2.pdf', path: 'https://drive.google.com/uc?export=download&id=1Jeba2OgTFSwygKRmdvVTsx75c_RszH3p' },
+        { name: 'Module 1 part 3.pdf', path: 'https://drive.google.com/uc?export=download&id=1T0TotHjvokkiKYP54EwY6bd9ps4UFV2E' },
+        { name: 'Module 1 part 4.pdf', path: 'https://drive.google.com/uc?export=download&id=1GHxAn2LvmMd84MKgL_ZfPIiObmaZElVL' },
+        { name: 'Module 1 part 5.pdf', path: 'https://drive.google.com/uc?export=download&id=1qu4J4oiQN5ESMUClPwfThuoMyzA24EtA' },
+        { name: 'Module 1 part 6.pdf', path: 'https://drive.google.com/uc?export=download&id=1-kacF2DSxDo44idmyn3FGMgbdDg4DgYV' },
+      ],
+    },
+    {
+      name: 'MODULE 2',
+      files: [
+        { name: 'Module 2 part 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1TwlUg_EEJAV9jZG60BUTJMiJ33Ng4Fr2' },
+        { name: 'Module 2 part 2.pdf', path: 'https://drive.google.com/uc?export=download&id=1Nvr7JitzyXIjJ9oj6CQnPa3mANlE2dEG' },
+        { name: 'Module 2 part 3.pdf', path: 'https://drive.google.com/uc?export=download&id=1CLoIIzh3lTmkRpIyyMFEgbUhNuXzHTWy' },
+        { name: 'Module 2 part 4.pdf', path: 'https://drive.google.com/uc?export=download&id=1QbQ2i0y94cWX4xZ6OwZKo9RiEzPMIBE8' },
+      ],
+    },
+    {
+      name: 'MODULE 3',
+      files: [
+        { name: 'Module 3 part 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1TBYMlxtRRGsWL7wueW8NqvSoFkAOkeR-' },
+        { name: 'Module 3 part 2.pdf', path: 'https://drive.google.com/uc?export=download&id=1jPsI43Wr1aK5Ms-2axurGIW2jqMqCE4M' },
+        { name: 'Module 3 part 3.pdf', path: 'https://drive.google.com/uc?export=download&id=1q9yZgOZIaGIpTg15O2Xd9NO4Pd0SiNGi' },
+        { name: 'Module 3 part 4.pdf', path: 'https://drive.google.com/uc?export=download&id=1s2p6C1q5uXqaWd0g8aVcoVxF-GNxVKNh' },
+        { name: 'Module 3 part 5.pdf', path: 'https://drive.google.com/uc?export=download&id=1nuDsmNi2G1h-77jxwdtFiq8q52CBjoqY' },
+        { name: 'Module 3 part 6.pdf', path: 'https://drive.google.com/uc?export=download&id=1S3BUnCl-pyxTqPaQdsrxyjh29xX9gmkw' },
+      ],
+    },
+    {
+      name: 'MODULE 4',
+      files: [
+        { name: 'Module 4 part 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1qRlJktmvhZ8bUdLx-9r5njqwwWStO6IH' },
+        { name: 'Module 4 part 2.pdf', path: 'https://drive.google.com/uc?export=download&id=17sri11kdse-2qgUzyZ3FsKwMT9HmTqTe' },
+      ],
+    },
+    {
+      name: 'MODULE 5',
+      files: [
+        { name: 'Module 5 part 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1tRru-CxN_G4sISex-C4okaFk7KZzvNRe' },
+        { name: 'Module 5 part 2.pdf', path: 'https://drive.google.com/uc?export=download&id=1YuMlJUkvLo67bxv_EG_qGrBVfLBDQeHv' },
+      ],
+    },
+  ];
+  
+  return (
+    <div className="space-y-8">
+      {modules.map((module) => (
+        <div key={module.name}>
+          <h3 className="font-bold text-lg mb-2">{module.name}</h3>
+          <div className="space-y-2">
+            {module.files.map((file) => (
+              <a
+                key={file.name}
+                href={file.path}
+                download
+                className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 font-semibold"
+              >
+                <span className="icon-download text-lg"></span>
+                <span>{file.name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
   // Custom structure for 20MCA188 Artificial Intelligence
-  if (courseCode === '20MCA188') {
-    const modules = [
-      {
-        name: 'MODULE 1',
-        files: [
-          { name: 'M1.pdf', path: 'notes/semester_ii/20MCA188/M1.pdf' },
-        ],
-      },
-      {
-        name: 'MODULE 2',
-        files: [
-          { name: 'M2.pdf', path: 'notes/semester_ii/20MCA188/M2.pdf' },
-        ],
-      },
-      {
-        name: 'MODULE 3',
-        files: [
-          { name: 'M3.1_Game_theory.pdf', path: 'notes/semester_ii/20MCA188/M3.1_Game_theory.pdf' },
-          { name: 'M3.2_Knowledge.pdf', path: 'notes/semester_ii/20MCA188/M3.2_Knowledge.pdf' },
-          { name: 'M3.3_Conceptual_Dependency.pdf', path: 'notes/semester_ii/20MCA188/M3.3_Conceptual_Dependency.pdf' },
-        ],
-      },
-      {
-        name: 'MODULE 4',
-        files: [
-          { name: 'M4.1_FOPL_and_Inference_Rules.pdf', path: 'notes/semester_ii/20MCA188/M4.1_FOPL_and_Inference_Rules.pdf' },
-          { name: 'M4.2_FOPL.pdf', path: 'notes/semester_ii/20MCA188/M4.2_FOPL.pdf' },
-          { name: 'M4.3_Planning.pdf', path: 'notes/semester_ii/20MCA188/M4.3_Planning.pdf' },
-          { name: 'M4.4_BlocksWorld-Goal_Stack.pdf', path: 'notes/semester_ii/20MCA188/M4.4_BlocksWorld-Goal_Stack.pdf' },
-          { name: 'M4.5Learning.pdf', path: 'notes/semester_ii/20MCA188/M4.5Learning.pdf' },
-        ],
-      },
-      {
-        name: 'MODULE 5',
-        files: [
-          { name: 'M5.1_Expert_Systems.pdf', path: 'notes/semester_ii/20MCA188/M5.1_Expert_Systems.pdf' },
-          { name: 'M5.2_Fuzzy_Logic.pdf', path: 'notes/semester_ii/20MCA188/M5.2_Fuzzy_Logic.pdf' },
-        ],
-      },
-      {
-        name: 'Text Book',
-        files: [
-          { name: 'Text Book- Elaine Rich.pdf', path: 'notes/semester_ii/20MCA188/Text Book- Elaine Rich.pdf', copyrighted: true },
-        ],
-      },
-    ];
+if (courseCode === '20MCA188') {
+  const modules = [
+    {
+      name: 'MODULE 1',
+      files: [
+        { name: 'M1.pdf', path: 'https://drive.google.com/uc?export=download&id=1D00BZ752JeYD21ENUbLGWRjGR6D0A2IV' },
+      ],
+    },
+    {
+      name: 'MODULE 2',
+      files: [
+        { name: 'M2.pdf', path: 'https://drive.google.com/uc?export=download&id=1sXBo4vPS6Ql5Do7BktXdhi2PsVM2vMWo' },
+      ],
+    },
+    {
+      name: 'MODULE 3',
+      files: [
+        { name: 'M3.1_Game_theory.pdf', path: 'https://drive.google.com/uc?export=download&id=10zOt6BBD3N5ptzvuRf7ritLge1jTRgmc' },
+      ],
+    },
+    {
+      name: 'MODULE 4',
+      files: [
+        { name: 'M4.1_FOPL_and_Inference_Rules.pdf', path: 'https://drive.google.com/uc?export=download&id=1C-zEwXw5qINy9v8tXkarhXCzQIhByk5L' },
+        { name: 'M4.2_FOPL.pdf', path: 'https://drive.google.com/uc?export=download&id=1CUrcjaH2qz-StC8pefpqLk4Y8Qg8AXep' },
+        { name: 'M4.3_Planning.pdf', path: 'https://drive.google.com/uc?export=download&id=1UWn70-0K7f3sPRR4LtIR9ZCee1e49dJO' },
+        { name: 'M4.4_BlocksWorld-Goal_Stack.pdf', path: 'https://drive.google.com/uc?export=download&id=1WJKEGhnoenOnYh2gbTj0JSL70dxAf73n' },
+        { name: 'M4.5Learning.pdf', path: 'https://drive.google.com/uc?export=download&id=1lRxXyrY0O2uYL-uGLJk6wgGARa-FhVmz' },
+      ],
+    },
+    {
+      name: 'MODULE 5',
+      files: [
+        { name: 'M5.1_Expert_Systems.pdf', path: 'https://drive.google.com/uc?export=download&id=188rlDKmOmTB_HWUcRA6WVpg2nBYpU6Wg' },
+        { name: 'M5.2_Fuzzy_Logic.pdf', path: 'https://drive.google.com/uc?export=download&id=1nzyzoR7XSsWwEvS5PeoHXgstlShNbjWd' },
+      ],
+    },
+    {
+      name: 'Text Book',
+      files: [
+        { name: 'Text Book- Elaine Rich.pdf', path: 'notes/semester_ii/20MCA188/Text Book- Elaine Rich.pdf', copyrighted: true },
+      ],
+    },
+  ];
+
     const hasNotes = modules.some(module => module.files && module.files.length > 0);
     if (!hasNotes) {
       return (
@@ -366,52 +439,52 @@ function TheoryModules({ courseCode }) {
     );
   }
 
-  // Custom structure for 20MCA103 Digital Fundamentals
-  if (courseCode === '20MCA103') {
-    const modules = [
-      {
-        name: 'MODULE 1',
-        files: [
-          { name: 'Module 1.pdf', path: 'notes/semester_i/20MCA103/Module 1.pdf' },
-        ],
-      },
-      {
-        name: 'MODULE 2',
-        files: [
-          { name: 'Module 2.pdf', path: 'notes/semester_i/20MCA103/Module 2.pdf' },
-        ],
-      },
-      {
-        name: 'MODULE 3',
-        files: [
-          { name: 'Module 3 Part 1.pdf', path: 'notes/semester_i/20MCA103/Module 3 Part 1.pdf' },
-          { name: 'Module 3 Part 2.pdf', path: 'notes/semester_i/20MCA103/Module 3 Part 2.pdf' },
-          { name: 'Module 3 Part 3.pdf', path: 'notes/semester_i/20MCA103/Module 3 Part 3.pdf' },
-          { name: 'Module 3 Part 4.pdf', path: 'notes/semester_i/20MCA103/Module 3 Part 4.pdf' },
-          { name: 'Module 3 Part 5.pdf', path: 'notes/semester_i/20MCA103/Module 3 Part 5.pdf' },
-        ],
-      },
-      {
-        name: 'MODULE 4',
-        files: [
-          { name: 'Module 4 Part 1.pdf', path: 'notes/semester_i/20MCA103/Module 4 Part 1.pdf' },
-          { name: 'Module 4 Part 2.pdf', path: 'notes/semester_i/20MCA103/Module 4 Part 2.pdf' },
-          { name: 'Module 4 Part 3.pdf', path: 'notes/semester_i/20MCA103/Module 4 Part 3.pdf' },
-          { name: 'Module 4 Part 4.pdf', path: 'notes/semester_i/20MCA103/Module 4 Part 4.pdf' },
-          { name: 'Module 4 Part 5.pdf', path: 'notes/semester_i/20MCA103/Module 4 Part 5.pdf' },
-        ],
-      },
-      {
-        name: 'MODULE 5',
-        files: [
-          { name: 'Module 5 Part 1.pdf', path: 'notes/semester_i/20MCA103/Module 5 Part 1.pdf' },
-          { name: 'Module 5 Part 2.pdf', path: 'notes/semester_i/20MCA103/Module 5 Part 2.pdf' },
-          { name: 'Module 5 Part 3.pdf', path: 'notes/semester_i/20MCA103/Module 5 Part 3.pdf' },
-          { name: 'Module 5 Part 4.pdf', path: 'notes/semester_i/20MCA103/Module 5 Part 4.pdf' },
-          { name: 'Module 5 Part 5.pdf', path: 'notes/semester_i/20MCA103/Module 5 Part 5.pdf' },
-        ],
-      },
-    ];
+if (courseCode === '20MCA103') {
+  const modules = [
+    {
+      name: 'MODULE 1',
+      files: [
+        { name: 'Module 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1S1LfaUv75YM4Shk__-WuCBZPXm6GYkLO' },
+      ],
+    },
+    {
+      name: 'MODULE 2',
+      files: [
+        { name: 'Module 2.pdf', path: 'https://drive.google.com/uc?export=download&id=1Hp8yevPAKEzUeBNwnqYL5sZxp7D-yjlu' },
+      ],
+    },
+    {
+      name: 'MODULE 3',
+      files: [
+        { name: 'Module 3 Part 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1bX7dAYQw3KPlPqLHsNiumVaYj0WB074a' },
+        { name: 'Module 3 Part 2.pdf', path: 'https://drive.google.com/uc?export=download&id=1aEyaf2jUXCi9DasBMDgDRsH5_GT8uwT4' },
+        { name: 'Module 3 Part 3.pdf', path: 'https://drive.google.com/uc?export=download&id=10RlyIB09UYti9fE0FAxLJEbzY-PFCnmR' },
+        { name: 'Module 3 Part 4.pdf', path: 'https://drive.google.com/uc?export=download&id=1P7Q4Qler_wrZxv5HIZUijAFA0nIL_Zpa' },
+        { name: 'Module 3 Part 5.pdf', path: 'https://drive.google.com/uc?export=download&id=1IIefn-u7mWaoshlLCKfAhA9up3kXb-Ji' },
+      ],
+    },
+    {
+      name: 'MODULE 4',
+      files: [
+        { name: 'Module 4 Part 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1MwUy3qbc8SMw1aEwytVaERG5O_y-4Zjw' },
+        { name: 'Module 4 Part 2.pdf', path: 'https://drive.google.com/uc?export=download&id=1oqv7Q7J7nPGFqmdJk_Qaoy6oWKsxpIei' },
+        { name: 'Module 4 Part 3.pdf', path: 'https://drive.google.com/uc?export=download&id=1zh_2RsQMJWy9Bq2K7UUQkROrQOuBoZZn' },
+        { name: 'Module 4 Part 4.pdf', path: 'https://drive.google.com/uc?export=download&id=1f-mArYxT3FYBEr4l1fDMJslD3Fled2Ju' },
+        { name: 'Module 4 Part 5.pdf', path: 'https://drive.google.com/uc?export=download&id=1H-INIITmdcKzlxjc4V8-ru0hcVVEc8As' },
+      ],
+    },
+    {
+      name: 'MODULE 5',
+      files: [
+        { name: 'Module 5 Part 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1NcqG0N7JGgDHJHaGbWMykw2IWiV3W_1B' },
+        { name: 'Module 5 Part 2.pdf', path: 'https://drive.google.com/uc?export=download&id=1CA_VIUo4iDbbiDKsppijK6uMaxZebkKO' },
+        { name: 'Module 5 Part 3.pdf', path: 'https://drive.google.com/uc?export=download&id=1Yruoo1k1lXIPofyi0uLYImUzm85_9A-f' },
+        { name: 'Module 5 Part 4.pdf', path: 'https://drive.google.com/uc?export=download&id=1-AgLldwyml25PGXGGlEhbhuHhOvAXzpB' },
+        { name: 'Module 5 Part 5.pdf', path: 'https://drive.google.com/uc?export=download&id=1WEpLm0n4NS5N-RcXy6GU6iu8GQfwmk9V' },
+      ],
+    },
+  ];
+
     return (
       <div className="space-y-8">
         {modules.map((module, idx) => (
@@ -437,52 +510,52 @@ function TheoryModules({ courseCode }) {
   }
 
   // Custom structure for 20MCA104 Advanced Computer Networks
-  if (courseCode === '20MCA104') {
-    const modules = [
-      {
-        name: 'MODULE 1',
-        files: [
-          { name: 'module1_part1.pdf', path: 'notes/semester_ii/20MCA104/module1_part1.pdf' },
-          { name: 'module1_part2.pdf', path: 'notes/semester_ii/20MCA104/module1_part2.pdf' },
-          { name: 'module1_part3.pdf', path: 'notes/semester_ii/20MCA104/module1_part3.pdf' },
-          { name: 'module1_part4.pdf', path: 'notes/semester_ii/20MCA104/module1_part4.pdf' },
-          { name: 'Module 1 Part 5.pdf', path: 'notes/semester_ii/20MCA104/Module 1 Part 5.pdf' },
-          { name: 'Module 1 Part 6.pdf', path: 'notes/semester_ii/20MCA104/Module 1 Part 6.pdf' },
-          { name: 'Module 1 Part 7.pdf', path: 'notes/semester_ii/20MCA104/Module 1 Part 7.pdf' },
-          { name: 'Module 1 Part 8.pdf', path: 'notes/semester_ii/20MCA104/Module 1 Part 8.pdf' },
-        ],
-      },
-      {
-        name: 'MODULE 2',
-        files: [
-          { name: 'Module 2 Part 1.pdf', path: 'notes/semester_ii/20MCA104/Module 2 Part 1.pdf' },
-          { name: 'Module 2 Part 2.pdf', path: 'notes/semester_ii/20MCA104/Module 2 Part 2.pdf' },
-          { name: 'Module 2 Part 3.pdf', path: 'notes/semester_ii/20MCA104/Module 2 Part 3.pdf' },
-          { name: 'Module 2 Part 4.pdf', path: 'notes/semester_ii/20MCA104/Module 2 Part 4.pdf' },
-        ],
-      },
-      {
-        name: 'MODULE 3',
-        files: [
-          { name: 'Module 3 Part 1.pdf', path: 'notes/semester_ii/20MCA104/Module 3 Part 1.pdf' },
-          { name: 'Module 3 Part 2.pdf', path: 'notes/semester_ii/20MCA104/Module 3 Part 2.pdf' },
-          { name: 'Module 3 Part 3.pdf', path: 'notes/semester_ii/20MCA104/Module 3 Part 3.pdf' },
-        ],
-      },
-      {
-        name: 'MODULE 4',
-        files: [
-          { name: 'Module 4 Part 1.pdf', path: 'notes/semester_ii/20MCA104/Module 4 Part 1.pdf' },
-          { name: 'Module 4 Part 2.pdf', path: 'notes/semester_ii/20MCA104/Module 4 Part 2.pdf' },
-        ],
-      },
-      {
-        name: 'MODULE 5',
-        files: [
-          { name: 'Module 5.pdf', path: 'notes/semester_ii/20MCA104/Module 5.pdf' },
-        ],
-      },
-    ];
+if (courseCode === '20MCA104') {
+  const modules = [
+    {
+      name: 'MODULE 1',
+      files: [
+        { name: 'Module 1 Part 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1CdimsDoURRmOqh8MK5p1Sfu4zg8PrxX4' },
+        { name: 'Module 1 Part 2.pdf', path: 'https://drive.google.com/uc?export=download&id=1B6KMWx20AdwTczZwhh7VEg0kX0Hzblfb' },
+        { name: 'Module 1 Part 3.pdf', path: 'https://drive.google.com/uc?export=download&id=1pGCLO1cuXSvsXw4Y7N1yE0CnEpR6fIku' },
+        { name: 'Module 1 Part 4.pdf', path: 'https://drive.google.com/uc?export=download&id=1lGnFPDTHw8zz_7X41ayyCrfl9IVr-6J1' },
+        { name: 'Module 1 Part 5.pdf', path: 'https://drive.google.com/uc?export=download&id=1mSevODKJ8u1YcoEJPuTYhsWwhO99RCBr' },
+        { name: 'Module 1 Part 6.pdf', path: 'https://drive.google.com/uc?export=download&id=1Q61GizUCsrRV2eNV9ZT4BBhdKVL0GGYe' },
+        { name: 'Module 1 Part 7.pdf', path: 'https://drive.google.com/uc?export=download&id=1u7-ItXnIsZEp7MOiw6yM8n1FFOPP6a_a' },
+        { name: 'Module 1 Part 8.pdf', path: 'https://drive.google.com/uc?export=download&id=1LpAHEyMl4f5h2TnXl1UzLw2NSKw31Bq1' },
+      ],
+    },
+    {
+      name: 'MODULE 2',
+      files: [
+        { name: 'Module 2 Part 1.pdf', path: 'https://drive.google.com/uc?export=download&id=142gB8wCGYou4tK8zNryUNB9G845vAWq6' },
+        { name: 'Module 2 Part 2.pdf', path: 'https://drive.google.com/uc?export=download&id=1vx8T5wdBdNW6XDTlgHtDLTl_-i-zq-ks' },
+        { name: 'Module 2 Part 3.pdf', path: 'https://drive.google.com/uc?export=download&id=1tpMwyCkCoaYVTR-gSgPGCEWVh8UXIcuG' },
+        { name: 'Module 2 Part 4.pdf', path: 'https://drive.google.com/uc?export=download&id=1rcsYfBQv4DMD85-mj4UcKai_7Mpg14OP' },
+      ],
+    },
+    {
+      name: 'MODULE 3',
+      files: [
+        { name: 'Module 3 Part 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1QUU2chrBSlvmdcF_CmyYgXfKQvw0KW10' },
+        { name: 'Module 3 Part 2.pdf', path: 'https://drive.google.com/uc?export=download&id=1P7bKnHBMM-ZV56Q_cXN01PEGlam8FU_B' },
+        { name: 'Module 3 Part 3.pdf', path: 'https://drive.google.com/uc?export=download&id=14iVMP5EOcnWnUT-y9aawfyY9xTy3AVdT' },
+      ],
+    },
+    {
+      name: 'MODULE 4',
+      files: [
+        { name: 'Module 4 Part 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1p_pOexYAzSu9WO0v6Ff4XtrknKiLFyUt' },
+        { name: 'Module 4 Part 2.pdf', path: 'https://drive.google.com/uc?export=download&id=18SAgJhob7YMnfoFPJOIfd5dGgp-w8-yB' },
+      ],
+    },
+    {
+      name: 'MODULE 5',
+      files: [
+        { name: 'Module 5.pdf', path: 'https://drive.google.com/uc?export=download&id=1rx_dftXXX1Tu6CYndqzIfwnrZfHhhIxC' },
+      ],
+    },
+  ];
     return (
       <div className="space-y-8">
         {modules.map((module, idx) => (
