@@ -7,6 +7,7 @@ function TheoryModules({ courseCode }) {
       icon: '🐍',
       color: 'from-green-400 to-blue-500',
       bgColor: 'bg-green-50',
+      darkBgColor: 'dark:bg-gray-900',
       borderColor: 'border-green-300',
       description: 'Master Python programming with hands-on projects and real-world applications'
     },
@@ -16,6 +17,7 @@ function TheoryModules({ courseCode }) {
       icon: '🌐',
       color: 'from-blue-400 to-purple-500',
       bgColor: 'bg-blue-50',
+      darkBgColor: 'dark:bg-gray-900',
       borderColor: 'border-blue-300',
       description: 'Build stunning websites with modern web technologies and frameworks'
     },
@@ -25,6 +27,7 @@ function TheoryModules({ courseCode }) {
       icon: '⚡',
       color: 'from-purple-400 to-pink-500',
       bgColor: 'bg-purple-50',
+      darkBgColor: 'dark:bg-gray-900',
       borderColor: 'border-purple-300',
       description: 'Implement advanced data structures and algorithms in C++'
     },
@@ -34,6 +37,7 @@ function TheoryModules({ courseCode }) {
       icon: '☕',
       color: 'from-orange-400 to-red-500',
       bgColor: 'bg-orange-50',
+      darkBgColor: 'dark:bg-gray-900',
       borderColor: 'border-orange-300',
       description: 'Learn OOP concepts with Java programming and design patterns'
     },
@@ -43,6 +47,7 @@ function TheoryModules({ courseCode }) {
       icon: '🗄️',
       color: 'from-indigo-400 to-blue-500',
       bgColor: 'bg-indigo-50',
+      darkBgColor: 'dark:bg-gray-900',
       borderColor: 'border-indigo-300',
       description: 'Master database management with SQL queries and optimization'
     },
@@ -52,6 +57,7 @@ function TheoryModules({ courseCode }) {
       icon: '🐧',
       color: 'from-gray-400 to-black',
       bgColor: 'bg-gray-50',
+      darkBgColor: 'dark:bg-gray-900',
       borderColor: 'border-gray-300',
       description: 'Configure networks and manage systems with Linux commands'
     }
@@ -61,7 +67,7 @@ function TheoryModules({ courseCode }) {
   if (labCourses[courseCode]) {
     const lab = labCourses[courseCode];
     return (
-      <div className={`min-h-screen ${lab.bgColor} py-16`}>
+      <div className={`min-h-screen ${lab.bgColor} ${lab.darkBgColor} py-16`}>
         <div className="max-w-4xl mx-auto px-6">
           {/* Header Section */}
           <div className="text-center mb-12">
@@ -74,10 +80,10 @@ function TheoryModules({ courseCode }) {
               </div>
             </div>
             
-            <h1 className="text-4xl font-black text-gray-800 mb-4">
+            <h1 className="text-4xl font-black text-gray-800 dark:text-white mb-4">
               {lab.name} Coming Soon!
             </h1>
-            <p className="text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
               {lab.description}
             </p>
             
@@ -89,37 +95,37 @@ function TheoryModules({ courseCode }) {
           </div>
 
           {/* Progress Section */}
-          <div className="bg-white rounded-xl p-8 border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] mb-8">
-            <h2 className="text-2xl font-black text-gray-800 mb-6 text-center">Development Progress</h2>
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-8 border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] mb-8">
+            <h2 className="text-2xl font-black text-gray-800 dark:text-white mb-6 text-center">Development Progress</h2>
             
             <div className="space-y-6">
               {/* Progress Bar */}
               <div>
-                <div className="flex justify-between text-sm font-bold text-gray-600 mb-2">
+                <div className="flex justify-between text-sm font-bold text-gray-600 dark:text-gray-300 mb-2">
                   <span>Lab Setup</span>
                   <span>85%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-4 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">
+                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">
                   <div className={`bg-gradient-to-r ${lab.color} h-full rounded-full animate-pulse`} style={{width: '85%'}}></div>
                 </div>
               </div>
               
               <div>
-                <div className="flex justify-between text-sm font-bold text-gray-600 mb-2">
+                <div className="flex justify-between text-sm font-bold text-gray-600 dark:text-gray-300 mb-2">
                   <span>Project Development</span>
                   <span>60%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-4 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">
+                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">
                   <div className={`bg-gradient-to-r ${lab.color} h-full rounded-full animate-pulse`} style={{width: '60%'}}></div>
                 </div>
               </div>
               
               <div>
-                <div className="flex justify-between text-sm font-bold text-gray-600 mb-2">
+                <div className="flex justify-between text-sm font-bold text-gray-600 dark:text-gray-300 mb-2">
                   <span>Documentation</span>
                   <span>40%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-4 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">
+                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">
                   <div className={`bg-gradient-to-r ${lab.color} h-full rounded-full animate-pulse`} style={{width: '40%'}}></div>
                 </div>
               </div>
@@ -128,24 +134,24 @@ function TheoryModules({ courseCode }) {
 
           {/* Features Section */}
           <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-white rounded-xl p-6 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)]">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)]">
               <div className="flex items-center gap-3 mb-4">
                 <div className={`w-10 h-10 bg-gradient-to-r ${lab.color} rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center`}>
                   <span className="icon-play text-white text-lg"></span>
                 </div>
-                <h3 className="text-lg font-black text-gray-800">Hands-on Projects</h3>
+                <h3 className="text-lg font-black text-gray-800 dark:text-white">Hands-on Projects</h3>
               </div>
-              <p className="text-gray-600">Real-world projects that will build your portfolio and practical skills</p>
+              <p className="text-gray-600 dark:text-gray-300">Real-world projects that will build your portfolio and practical skills</p>
             </div>
             
-            <div className="bg-white rounded-xl p-6 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)]">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)]">
               <div className="flex items-center gap-3 mb-4">
                 <div className={`w-10 h-10 bg-gradient-to-r ${lab.color} rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center`}>
                   <span className="icon-users text-white text-lg"></span>
                 </div>
-                <h3 className="text-lg font-black text-gray-800">Expert Guidance</h3>
+                <h3 className="text-lg font-black text-gray-800 dark:text-white">Expert Guidance</h3>
               </div>
-              <p className="text-gray-600">Step-by-step tutorials and expert tips to master the concepts</p>
+              <p className="text-gray-600 dark:text-gray-300">Step-by-step tutorials and expert tips to master the concepts</p>
             </div>
           </div>
 
@@ -169,7 +175,7 @@ function TheoryModules({ courseCode }) {
               </button>
             </div>
             
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               Be the first to know when this lab is ready! 🎯
             </p>
           </div>
@@ -245,14 +251,14 @@ function TheoryModules({ courseCode }) {
       <div className="space-y-8">
         {modules.map((module, idx) => (
           <div key={module.name}>
-            <h3 className="font-bold text-lg mb-2">{module.name}</h3>
+            <h3 className="font-bold text-lg mb-2 dark:text-white">{module.name}</h3>
             <div className="space-y-2">
               {module.files.map((file) => (
                 <a
                   key={file.name}
                   href={file.path}
                   download
-                  className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 font-semibold"
+                  className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 dark:text-blue-400 font-semibold"
                 >
                   <span className="icon-download text-lg"></span>
                   <span>{file.name}</span>
@@ -319,14 +325,14 @@ if (courseCode === '20MCA107') {
     <div className="space-y-8">
       {modules.map((module) => (
         <div key={module.name}>
-          <h3 className="font-bold text-lg mb-2">{module.name}</h3>
+          <h3 className="font-bold text-lg mb-2 dark:text-white">{module.name}</h3>
           <div className="space-y-2">
             {module.files.map((file) => (
               <a
                 key={file.name}
                 href={file.path}
                 download
-                className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 font-semibold"
+                className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 dark:text-blue-400 font-semibold"
               >
                 <span className="icon-download text-lg"></span>
                 <span>{file.name}</span>
@@ -389,11 +395,11 @@ if (courseCode === '20MCA188') {
     if (!hasNotes) {
       return (
         <div className="flex flex-col items-center justify-center py-12">
-          <div className="w-20 h-20 bg-yellow-100 border-4 border-yellow-500 rounded-full flex items-center justify-center mb-4">
+          <div className="w-20 h-20 bg-yellow-100 dark:bg-yellow-900/20 border-4 border-yellow-500 rounded-full flex items-center justify-center mb-4">
             <span className="icon-hourglass text-3xl text-yellow-500"></span>
           </div>
-          <h2 className="text-2xl font-black text-yellow-700 mb-2">Notes Coming Soon</h2>
-          <p className="text-gray-600 mb-4">Notes for this subject will be available soon. Want to help?</p>
+          <h2 className="text-2xl font-black text-yellow-700 dark:text-yellow-300 mb-2">Notes Coming Soon</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-4">Notes for this subject will be available soon. Want to help?</p>
           <a href="https://github.com/zoxilsi/MCA-KTU-STUDY-MATERIAL" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-yellow-500 text-white font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:bg-yellow-600 transition-all">Contribute Notes</a>
         </div>
       );
@@ -402,16 +408,16 @@ if (courseCode === '20MCA188') {
       <div className="space-y-8">
         {modules.map((module, idx) => (
           <div key={module.name}>
-            <h3 className="font-bold text-lg mb-2">{module.name}</h3>
+            <h3 className="font-bold text-lg mb-2 dark:text-white">{module.name}</h3>
             <div className="space-y-2">
               {module.files.length === 0 ? (
-                <div className="px-4 py-2 bg-yellow-100 border-2 border-yellow-500 rounded-lg text-yellow-700 font-semibold inline-block">Coming Soon</div>
+                <div className="px-4 py-2 bg-yellow-100 dark:bg-yellow-900/20 border-2 border-yellow-500 rounded-lg text-yellow-700 dark:text-yellow-300 font-semibold inline-block">Coming Soon</div>
               ) : (
                 module.files.map((file) => (
                   file.copyrighted ? (
                     <div
                       key={file.name}
-                      className="flex items-center gap-2 px-4 py-2 bg-gray-100 border-2 border-gray-300 rounded-lg text-gray-500 italic font-medium"
+                      className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 rounded-lg text-gray-500 dark:text-gray-400 italic font-medium"
                     >
                       <span className="icon-lock text-lg"></span>
                       <span>{file.name} – Copyrighted Material (Not Available for Download)</span>
@@ -421,7 +427,7 @@ if (courseCode === '20MCA188') {
                       key={file.name}
                       href={file.path}
                       download
-                      className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 font-semibold"
+                      className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 dark:text-blue-400 font-semibold"
                     >
                       <span className="icon-download text-lg"></span>
                       <span>{file.name}</span>
@@ -489,14 +495,14 @@ if (courseCode === '20MCA103') {
       <div className="space-y-8">
         {modules.map((module, idx) => (
           <div key={module.name}>
-            <h3 className="font-bold text-lg mb-2">{module.name}</h3>
+            <h3 className="font-bold text-lg mb-2 dark:text-white">{module.name}</h3>
             <div className="space-y-2">
               {module.files.map((file) => (
                 <a
                   key={file.name}
                   href={file.path}
                   download
-                  className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 font-semibold"
+                  className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 dark:text-blue-400 font-semibold"
                 >
                   <span className="icon-download text-lg"></span>
                   <span>{file.name}</span>
@@ -560,14 +566,14 @@ if (courseCode === '20MCA104') {
       <div className="space-y-8">
         {modules.map((module, idx) => (
           <div key={module.name}>
-            <h3 className="font-bold text-lg mb-2">{module.name}</h3>
+            <h3 className="font-bold text-lg mb-2 dark:text-white">{module.name}</h3>
             <div className="space-y-2">
               {module.files.map((file) => (
                 <a
                   key={file.name}
                   href={file.path}
                   download
-                  className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 font-semibold"
+                  className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 dark:text-blue-400 font-semibold"
                 >
                   <span className="icon-download text-lg"></span>
                   <span>{file.name}</span>
@@ -586,14 +592,14 @@ if (courseCode === '20MCA104') {
       <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center mb-4">
         <span className="icon-book-open text-white text-3xl"></span>
       </div>
-      <h2 className="text-3xl font-black text-pink-600 mb-4 text-center">
+      <h2 className="text-3xl font-black text-pink-600 dark:text-pink-400 mb-4 text-center">
         Notes Coming Soon!
       </h2>
-      <p className="text-lg text-gray-600 mb-6 text-center max-w-md">
-        We're working hard to bring you comprehensive notes for <span className="font-bold text-black">{courseCode}</span>. Stay tuned for amazing content!
+      <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 text-center max-w-md">
+        We're working hard to bring you comprehensive notes for <span className="font-bold text-black dark:text-white">{courseCode}</span>. Stay tuned for amazing content!
       </p>
-      <p className="text-base text-gray-700 mb-4 text-center max-w-md">
-        Want to help? <a href="https://github.com/zoxilsi/MCA-STUDY-MATERIALS" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline font-bold">Contribute & Share on GitHub</a> to make this website better for everyone!
+      <p className="text-base text-gray-700 dark:text-gray-400 mb-4 text-center max-w-md">
+        Want to help? <a href="https://github.com/zoxilsi/MCA-STUDY-MATERIALS" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline font-bold">Contribute & Share on GitHub</a> to make this website better for everyone!
       </p>
       <a
         href="https://github.com/zoxilsi/MCA-STUDY-MATERIALS"
@@ -607,5 +613,3 @@ if (courseCode === '20MCA104') {
     </div>
   );
 }
-
-export default TheoryModules;
