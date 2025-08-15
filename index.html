@@ -26,6 +26,11 @@
         <script
             src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+          tailwind.config = {
+            darkMode: 'class'
+          }
+        </script>
         <link
             href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css"
             rel="stylesheet">
@@ -67,6 +72,7 @@
     </head>
     <body>
         <div id="root"></div>
+        <script type="text/babel" src="components/ThemeContext.js"></script>
         <script type="text/babel" src="components/Header.js"></script>
         <script type="text/babel" src="components/SemesterCard.js"></script>
         <script type="text/babel" src="components/CourseCard.js"></script>
@@ -77,8 +83,8 @@
         <script type="text/babel" src="components/Hero.js"></script>
         <script type="text/babel" src="components/ProgressStats.js"></script>
         <script type="text/babel" src="components/QuestionPapers.js"></script>
-        <script type="text/babel"
-            src="components/QuestionPapersYear.js"></script>
+        <script type="text/babel" src="components/QuestionPapersYear.js"></script>
+        <script type="text/babel" src="components/AdvancedSearchFilters.js"></script>
         <script type="text/babel" src="utils/curriculumData.js"></script>
         <script type="text/babel" src="utils/courseContent.js"></script>
         <script type="text/babel" src="utils/questionPapersData.js"></script>

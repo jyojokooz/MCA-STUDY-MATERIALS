@@ -4,11 +4,18 @@ function Header({
   selectedSemester,
   onSemesterChange,
   onQuestionPapersClick,
+  showAdvancedFilters,
+  onToggleAdvancedFilters,
 }) {
+  const { isDarkMode, toggleDarkMode } = useTheme();
   try {
     return (
       <header
-        className="bg-[#f0f0f0] border-b-3 border-black p-4"
+        className={`border-b-3 p-4 transition-colors duration-200 ${
+          isDarkMode 
+            ? 'bg-gray-900 border-gray-600 text-white' 
+            : 'bg-[#f0f0f0] border-black text-black'
+        }`}
         data-name="header"
         data-file="components/Header.js"
       >
@@ -19,10 +26,14 @@ function Header({
                 <div className="icon-graduation-cap text-2xl text-white"></div>
               </div>
               <div>
-                <h1 className="text-3xl font-black text-black">
+                <h1 className={`text-3xl font-black ${
+                  isDarkMode ? 'text-white' : 'text-black'
+                }`}>
                   MCA Notes | KTU
                 </h1>
-                <p className="text-base text-gray-600 mt-1">
+                <p className={`text-base mt-1 ${
+                  isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                }`}>
                   RAJIV GANDHI INSTITUTE OF TECHNOLOGY, KOTTAYAM
                 </p>
               </div>
@@ -41,15 +52,51 @@ function Header({
                 <div className="icon-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm sm:text-base lg:text-sm"></div>
               </div>
 
+              {/* Advanced Search Toggle */}
+              <button
+                onClick={onToggleAdvancedFilters}
+                className={`flex-shrink-0 flex items-center gap-1.5 px-3 py-2.5 text-sm font-bold rounded-lg border-2 transition-all whitespace-nowrap ${
+                  showAdvancedFilters
+                    ? isDarkMode
+                      ? 'bg-blue-600 text-white border-blue-500 shadow-[2px_2px_0px_rgba(0,0,0,0.9)]'
+                      : 'bg-blue-500 text-white border-blue-700 shadow-[2px_2px_0px_rgba(0,0,0,0.9)]'
+                    : isDarkMode
+                      ? 'bg-gray-700 text-white border-gray-600 hover:bg-gray-600 shadow-[2px_2px_0px_rgba(0,0,0,0.9)] hover:shadow-[3px_3px_0px_rgba(0,0,0,0.9)]'
+                      : 'bg-white text-black border-black hover:shadow-[3px_3px_0px_rgba(0,0,0,0.9)] shadow-[2px_2px_0px_rgba(0,0,0,0.9)]'
+                }`}
+              >
+                <div className="icon-filter text-sm"></div>
+                Filters
+              </button>
+
+              {/* Dark Mode Toggle */}
+              <button
+                onClick={toggleDarkMode}
+                className={`flex-shrink-0 flex items-center gap-1.5 px-3 py-2.5 text-sm font-bold rounded-lg border-2 transition-all whitespace-nowrap ${
+                  isDarkMode
+                    ? 'bg-yellow-500 text-black border-yellow-600 hover:bg-yellow-400 shadow-[2px_2px_0px_rgba(0,0,0,0.9)] hover:shadow-[3px_3px_0px_rgba(0,0,0,0.9)]'
+                    : 'bg-gray-800 text-white border-gray-900 hover:bg-gray-700 shadow-[2px_2px_0px_rgba(0,0,0,0.9)] hover:shadow-[3px_3px_0px_rgba(0,0,0,0.9)]'
+                }`}
+              >
+                <div className={`text-sm ${
+                  isDarkMode ? 'icon-sun' : 'icon-moon'
+                }`}></div>
+                {isDarkMode ? 'Light' : 'Dark'}
+              </button>
+
               {/* Responsive Star Button */}
               <a
                 href="https://github.com/zoxilsi/MCA-STUDY-MATERIALS"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 flex items-center gap-1.5 px-4 py-2.5 bg-gray-900 text-white text-sm sm:text-base lg:text-sm font-bold rounded-lg border-2 border-black shadow-[2px_2px_0px_rgba(0,0,0,0.9)] hover:shadow-[3px_3px_0px_rgba(0,0,0,0.9)] hover:bg-gray-700 transition-all whitespace-nowrap"
+                className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2.5 text-sm font-bold rounded-lg border-2 transition-all whitespace-nowrap ${
+                  isDarkMode
+                    ? 'bg-gray-800 text-white border-gray-700 hover:bg-gray-700 shadow-[2px_2px_0px_rgba(0,0,0,0.9)] hover:shadow-[3px_3px_0px_rgba(0,0,0,0.9)]'
+                    : 'bg-gray-900 text-white border-black hover:bg-gray-700 shadow-[2px_2px_0px_rgba(0,0,0,0.9)] hover:shadow-[3px_3px_0px_rgba(0,0,0,0.9)]'
+                }`}
               >
-                <div className="icon-github text-sm sm:text-base lg:text-sm"></div>
-                <div className="icon-star text-sm sm:text-base lg:text-sm"></div>
+                <div className="icon-github text-sm"></div>
+                <div className="icon-star text-sm"></div>
                 Star
               </a>
             </div>

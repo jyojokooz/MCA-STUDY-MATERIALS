@@ -43,6 +43,17 @@ function App() {
     const [selectedQuestionPaperSemester, setSelectedQuestionPaperSemester] = React.useState(null);
     const [selectedQuestionPaperSubject, setSelectedQuestionPaperSubject] = React.useState(null);
     
+    // Advanced search filters state
+    const [showAdvancedFilters, setShowAdvancedFilters] = React.useState(false);
+    const [filters, setFilters] = React.useState({
+      type: '',
+      semester: '',
+      credits: '',
+      hasNotes: ''
+    });
+    
+    const { isDarkMode } = useTheme();
+    
     const allCourses = curriculumData.getAllCourses();
     
     // Make handleCourseDetails globally available
@@ -78,6 +89,22 @@ function App() {
       setSelectedQuestionPaperSubject(null);
     };
 
+    // Toggle advanced filters
+    const handleToggleAdvancedFilters = () => {
+      setShowAdvancedFilters(!showAdvancedFilters);
+    };
+    
+    // Function to check if course has notes available
+    const hasNotes = (courseCode) => {
+      const coursesWithNotes = [
+        '20MCA102', // Database Management
+        '20MCA103', // Digital Fundamentals
+        '20MCA104', // Computer Networks
+        '20MCA188'  // Artificial Intelligence
+      ];
+      return coursesWithNotes.includes(courseCode);
+    };
+    
     // Make the semester navigation function globally available
     window.showQuestionPapersForSemester = handleShowQuestionPapersForSemester;
     
@@ -96,8 +123,29 @@ function App() {
         courses = curriculumData.getCoursesBySemester(selectedSemester);
       }
       
+      // Apply advanced filters
+      if (filters.type) {
+        courses = courses.filter(course => course.type === filters.type);
+      }
+      
+      if (filters.semester && !searchTerm) {
+        courses = courses.filter(course => course.semester === filters.semester);
+      }
+      
+      if (filters.credits) {
+        courses = courses.filter(course => course.credits.toString() === filters.credits);
+      }
+      
+      if (filters.hasNotes) {
+        if (filters.hasNotes === 'yes') {
+          courses = courses.filter(course => hasNotes(course.code));
+        } else if (filters.hasNotes === 'no') {
+          courses = courses.filter(course => !hasNotes(course.code));
+        }
+      }
+      
       return courses;
-    }, [selectedSemester, searchTerm, allCourses]);
+    }, [selectedSemester, searchTerm, allCourses, filters]);
     
     const categorizedCourses = React.useMemo(() => {
       const theory = filteredCourses.filter(course => course.type === 'Theory');
@@ -148,16 +196,27 @@ function App() {
     }
     
     return (
-      <div className="min-h-screen bg-[#f0f0f0]" data-name="app" data-file="app.js">
+      <div className={`min-h-screen transition-colors duration-200 ${
+        isDarkMode ? 'bg-gray-900' : 'bg-[#f0f0f0]'
+      }`} data-name="app" data-file="app.js">
         <Header 
           searchTerm={searchTerm}
           onSearchChange={setSearchTerm}
           selectedSemester={selectedSemester}
           onSemesterChange={setSelectedSemester}
           onQuestionPapersClick={handleQuestionPapersClick}
+          showAdvancedFilters={showAdvancedFilters}
+          onToggleAdvancedFilters={handleToggleAdvancedFilters}
         />
         
         <main className="max-w-6xl mx-auto p-6">
+          {/* Advanced Search Filters */}
+          <AdvancedSearchFilters 
+            filters={filters}
+            onFiltersChange={setFilters}
+            isVisible={showAdvancedFilters}
+            onToggle={handleToggleAdvancedFilters}
+          />
           <ProgressStats 
             courses={allCourses}
             selectedSemester={selectedSemester}
@@ -165,10 +224,14 @@ function App() {
           
           {searchTerm && (
             <div className="mb-6">
-              <h2 className="text-xl font-bold text-black mb-2">
+              <h2 className={`text-xl font-bold mb-2 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}>
                 Search results for "{searchTerm}"
               </h2>
-              <p className="text-gray-600">
+              <p className={`${
+                isDarkMode ? 'text-gray-300' : 'text-gray-600'
+              }`}>
                 {filteredCourses.length} course{filteredCourses.length !== 1 ? 's' : ''} found across all semesters
               </p>
             </div>
@@ -176,8 +239,12 @@ function App() {
           
           {!searchTerm && (
             <div className="mb-6">
-              <h2 className="text-2xl font-black text-black mb-2">{selectedSemester}</h2>
-              <p className="text-gray-600">
+              <h2 className={`text-2xl font-black mb-2 ${
+                isDarkMode ? 'text-white' : 'text-black'
+              }`}>{selectedSemester}</h2>
+              <p className={`${
+                isDarkMode ? 'text-gray-300' : 'text-gray-600'
+              }`}>
                 Explore {filteredCourses.length} courses organized by categories
               </p>
             </div>
@@ -349,6 +416,8 @@ function App() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ErrorBoundary>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </ErrorBoundary>
 );
