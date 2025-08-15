@@ -11,7 +11,6 @@ function AdvancedSearchFilters({ filters, onFiltersChange, isVisible, onToggle }
   const clearFilters = () => {
     onFiltersChange({
       type: '',
-      semester: '',
       credits: '',
       hasNotes: ''
     });
@@ -19,10 +18,10 @@ function AdvancedSearchFilters({ filters, onFiltersChange, isVisible, onToggle }
 
   const hasActiveFilters = Object.values(filters).some(value => value !== '');
 
+  if (!isVisible) return null;
+
   return (
-    <div className={`transition-all duration-300 overflow-hidden ${
-      isVisible ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-    }`}>
+    <div className="mb-4">
       <div className={`p-6 rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] mb-6 ${
         isDarkMode 
           ? 'bg-gray-800 text-white border-gray-600' 
@@ -47,7 +46,7 @@ function AdvancedSearchFilters({ filters, onFiltersChange, isVisible, onToggle }
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Course Type Filter */}
           <div>
             <label className={`block text-sm font-bold mb-2 ${
@@ -75,30 +74,6 @@ function AdvancedSearchFilters({ filters, onFiltersChange, isVisible, onToggle }
             </select>
           </div>
 
-          {/* Semester Filter */}
-          <div>
-            <label className={`block text-sm font-bold mb-2 ${
-              isDarkMode ? 'text-gray-300' : 'text-gray-700'
-            }`}>
-              Semester
-            </label>
-            <select
-              value={filters.semester}
-              onChange={(e) => handleFilterChange('semester', e.target.value)}
-              className={`w-full px-3 py-2 rounded-lg border-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] font-bold text-sm transition-all focus:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] ${
-                isDarkMode
-                  ? 'bg-gray-700 text-white border-gray-600 focus:border-blue-400'
-                  : 'bg-white text-black border-black focus:border-blue-500'
-              }`}
-            >
-              <option value="">All Semesters</option>
-              <option value="Semester I">Semester I</option>
-              <option value="Semester II">Semester II</option>
-              <option value="Semester III">Semester III</option>
-              <option value="Semester IV">Semester IV</option>
-            </select>
-          </div>
-
           {/* Credits Filter */}
           <div>
             <label className={`block text-sm font-bold mb-2 ${
@@ -116,11 +91,10 @@ function AdvancedSearchFilters({ filters, onFiltersChange, isVisible, onToggle }
               }`}
             >
               <option value="">All Credits</option>
-              <option value="3">3 Credits</option>
-              <option value="4">4 Credits</option>
-              <option value="1">1 Credit</option>
               <option value="2">2 Credits</option>
-              <option value="8">8 Credits</option>
+              <option value="4">4 Credits</option>
+              <option value="6">6 Credits</option>
+              <option value="12">12 Credits</option>
             </select>
           </div>
 
@@ -129,7 +103,7 @@ function AdvancedSearchFilters({ filters, onFiltersChange, isVisible, onToggle }
             <label className={`block text-sm font-bold mb-2 ${
               isDarkMode ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              Notes Available
+              Notes Status
             </label>
             <select
               value={filters.hasNotes}
@@ -149,7 +123,9 @@ function AdvancedSearchFilters({ filters, onFiltersChange, isVisible, onToggle }
 
         {/* Active Filters Display */}
         {hasActiveFilters && (
-          <div className="mt-4 pt-4 border-t border-gray-300 dark:border-gray-600">
+          <div className={`mt-4 pt-4 border-t ${
+            isDarkMode ? 'border-gray-600' : 'border-gray-300'
+          }`}>
             <div className="flex flex-wrap gap-2">
               <span className={`text-sm font-bold ${
                 isDarkMode ? 'text-gray-300' : 'text-gray-600'
