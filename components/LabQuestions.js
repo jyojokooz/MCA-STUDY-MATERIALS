@@ -7,6 +7,7 @@ function LabQuestions({ course }) {
       icon: '🐍',
       color: 'from-green-400 to-blue-500',
       bgColor: 'bg-green-50',
+      darkBgColor: 'dark:bg-gray-900',
       borderColor: 'border-green-300',
       description: 'Master Python programming with hands-on projects and real-world applications',
       githubRepo: 'https://github.com/mca-website/python-lab-exercises',
@@ -18,6 +19,7 @@ function LabQuestions({ course }) {
       icon: '🌐',
       color: 'from-blue-400 to-purple-500',
       bgColor: 'bg-blue-50',
+      darkBgColor: 'dark:bg-gray-900',
       borderColor: 'border-blue-300',
       description: 'Build stunning websites with modern web technologies and frameworks',
       githubRepo: 'https://github.com/mca-website/web-programming-lab',
@@ -29,6 +31,7 @@ function LabQuestions({ course }) {
       icon: '⚡',
       color: 'from-purple-400 to-pink-500',
       bgColor: 'bg-purple-50',
+      darkBgColor: 'dark:bg-gray-900',
       borderColor: 'border-purple-300',
       description: 'Implement advanced data structures and algorithms in C++',
       githubRepo: 'https://github.com/mca-website/data-structures-lab',
@@ -40,6 +43,7 @@ function LabQuestions({ course }) {
       icon: '☕',
       color: 'from-orange-400 to-red-500',
       bgColor: 'bg-orange-50',
+      darkBgColor: 'dark:bg-gray-900',
       borderColor: 'border-orange-300',
       description: 'Learn OOP concepts with Java programming and design patterns',
       githubRepo: 'https://github.com/mca-website/oop-java-lab',
@@ -51,6 +55,7 @@ function LabQuestions({ course }) {
       icon: '🗄️',
       color: 'from-indigo-400 to-blue-500',
       bgColor: 'bg-indigo-50',
+      darkBgColor: 'dark:bg-gray-900',
       borderColor: 'border-indigo-300',
       description: 'Master database management with SQL queries and optimization',
       githubRepo: 'https://github.com/mca-website/dbms-lab-exercises',
@@ -62,6 +67,7 @@ function LabQuestions({ course }) {
       icon: '🐧',
       color: 'from-gray-400 to-black',
       bgColor: 'bg-gray-50',
+      darkBgColor: 'dark:bg-gray-900',
       borderColor: 'border-gray-300',
       description: 'Configure networks and manage systems with Linux commands',
       githubRepo: 'https://github.com/mca-website/networking-lab',
@@ -73,21 +79,21 @@ function LabQuestions({ course }) {
   if (labCourses[course.code]) {
     const lab = labCourses[course.code];
     return (
-      <div className={`min-h-screen ${lab.bgColor} py-16`}>
+      <div className={`min-h-screen ${lab.bgColor} ${lab.darkBgColor} py-16`}>
         <div className={`max-w-4xl mx-auto px-6 pt-12 pb-6`}>
           <div className="flex items-center gap-4 mb-8">
             <div className={`w-14 h-14 bg-gradient-to-r ${lab.color} rounded-lg border-3 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] flex items-center justify-center`}>
               <span className="text-3xl">{lab.icon}</span>
             </div>
             <div>
-              <h1 className="text-2xl font-black text-black mb-1">{lab.name} <span className="text-base font-bold text-gray-500">({course.code})</span></h1>
-              <p className="text-sm text-gray-600">{lab.description}</p>
+              <h1 className="text-2xl font-black text-black dark:text-white mb-1">{lab.name} <span className="text-base font-bold text-gray-500 dark:text-gray-400">({course.code})</span></h1>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{lab.description}</p>
             </div>
           </div>
         </div>
 
         {/* Minimal Contribution Section */}
-        <div className="bg-white rounded-xl p-4 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] mb-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="bg-white dark:bg-gray-800 rounded-xl p-4 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] mb-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <div className="flex flex-col md:flex-row gap-4 mt-6">
             <button
               className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white font-bold text-sm rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:bg-blue-700 transition-all"
@@ -107,14 +113,14 @@ function LabQuestions({ course }) {
         </div>
 
         {/* Repository Links Section */}
-        <div className="bg-white rounded-xl p-8 border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] mb-8">
-          <h2 className="text-2xl font-black text-gray-800 mb-6 text-center">
+        <div className="bg-white dark:bg-gray-800 rounded-xl p-8 border-3 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.9)] mb-8">
+          <h2 className="text-2xl font-black text-gray-800 dark:text-white mb-6 text-center">
             <span className="icon-book text-xl mr-2"></span>Repository Links
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
             <div className="text-center">
-              <h3 className="text-lg font-black text-gray-800 mb-4">GitHub Repository</h3>
+              <h3 className="text-lg font-black text-gray-800 dark:text-white mb-4">GitHub Repository</h3>
               <a 
                 href={lab.githubRepo}
                 target="_blank"
@@ -124,11 +130,11 @@ function LabQuestions({ course }) {
                 <span className="icon-github text-xl"></span>
                 View on GitHub
               </a>
-              <p className="text-sm text-gray-600 mt-2">Find all lab exercises, solutions, and code examples</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Find all lab exercises, solutions, and code examples</p>
             </div>
             
             <div className="text-center">
-              <h3 className="text-lg font-black text-gray-800 mb-4">GitLab Repository</h3>
+              <h3 className="text-lg font-black text-gray-800 dark:text-white mb-4">GitLab Repository</h3>
               <a 
                 href={lab.gitlabRepo}
                 target="_blank"
@@ -138,7 +144,7 @@ function LabQuestions({ course }) {
                 <span className="icon-gitlab text-xl"></span>
                 View on GitLab
               </a>
-              <p className="text-sm text-gray-600 mt-2">Alternative repository with CI/CD pipelines</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Alternative repository with CI/CD pipelines</p>
             </div>
           </div>
         </div>
@@ -149,7 +155,7 @@ function LabQuestions({ course }) {
             href="https://github.com/zoxilsi/KTU_MCA_LAB_WORK"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white font-bold text-sm rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:bg-gray-700 transition-all"
+            className="flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white font-bold text-sm rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:bg-gray-700 dark:hover:bg-gray-600 transition-all"
           >
             <div className="icon-github text-base"></div>
             Lab Work Repository
@@ -173,23 +179,23 @@ function LabQuestions({ course }) {
       </div>
       
       {/* Main Heading */}
-      <h2 className="text-3xl font-black text-yellow-700 mb-4 text-center">
+      <h2 className="text-3xl font-black text-yellow-700 dark:text-yellow-300 mb-4 text-center">
         Lab Questions Coming Soon!
       </h2>
       
       {/* Subtitle */}
-      <p className="text-lg text-gray-600 mb-6 text-center max-w-md">
-        We're working hard to bring you comprehensive lab questions for <span className="font-bold text-black">{course.code}</span>. 
+      <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 text-center max-w-md">
+        We're working hard to bring you comprehensive lab questions for <span className="font-bold text-black dark:text-white">{course.code}</span>. 
         Stay tuned for amazing content!
       </p>
       
       {/* Progress Bar */}
-      <div className="w-64 bg-gray-200 rounded-full h-3 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] mb-6">
+      <div className="w-64 bg-gray-200 dark:bg-gray-700 rounded-full h-3 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] mb-6">
         <div className="bg-gradient-to-r from-yellow-400 to-orange-500 h-full rounded-full animate-pulse" style={{width: '75%'}}></div>
       </div>
       
       {/* Status Badge */}
-      <div className="px-4 py-2 bg-yellow-100 border-2 border-yellow-500 rounded-lg text-yellow-700 font-bold mb-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">
+      <div className="px-4 py-2 bg-yellow-100 dark:bg-yellow-900/20 border-2 border-yellow-500 rounded-lg text-yellow-700 dark:text-yellow-300 font-bold mb-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)]">
         <span className="icon-trending-up text-sm mr-2"></span>
         In Development - 75% Complete
       </div>
@@ -214,17 +220,15 @@ function LabQuestions({ course }) {
       </div>
       
       {/* Fun Facts */}
-      <div className="mt-8 p-4 bg-gray-50 rounded-lg border-2 border-gray-300 max-w-md">
-        <h4 className="font-bold text-gray-800 mb-2 flex items-center gap-2">
+      <div className="mt-8 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border-2 border-gray-300 dark:border-gray-700 max-w-md">
+        <h4 className="font-bold text-gray-800 dark:text-white mb-2 flex items-center gap-2">
           <span className="icon-lightbulb text-yellow-500"></span>
           Did You Know?
         </h4>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-600 dark:text-gray-300">
           Our lab questions are created by students, for students! Each question is carefully crafted to make learning easier and more engaging.
         </p>
       </div>
     </div>
   );
 }
-
-export default LabQuestions;

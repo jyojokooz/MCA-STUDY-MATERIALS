@@ -25,10 +25,17 @@ style.textContent = `
     z-index: 9999;
     font-size: 20px;
 }
+.dark .back-to-top {
+    background: linear-gradient(135deg, #8a3ffc, #4a8eff);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 .back-to-top.visible { opacity: 1; }
 .back-to-top:hover { 
     transform: translateY(-3px);
     background: linear-gradient(135deg, #5b0fb6, #1f5fd6); /* Slightly darker hover */
+}
+.dark .back-to-top:hover {
+    background: linear-gradient(135deg, #7a2ffc, #3a7eff);
 }
 .back-to-top .fa-solid { font-size: 24px; }
 `;
