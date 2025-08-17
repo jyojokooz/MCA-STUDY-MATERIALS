@@ -6,7 +6,7 @@ Welcome to **MCA-STUDY-MATERIALS** - a comprehensive, user-friendly, and modern 
 ---
 
 ## ✨ 1. Our Pledge  
- We, as organizers, maintainers, mentors, and participants of **GSSoC’25**, pledge to build a **safe, inclusive, and supportive environment** for everyone.  
+ We, as organizers, maintainers, mentors, and participants, pledge to build a **safe, inclusive, and supportive environment** for everyone.  
 
 We are committed to:  
 -  Equal opportunity for all, regardless of background.  
@@ -19,7 +19,7 @@ We recognize that our words and actions affect others, and we pledge to be mindf
 ---
 
 ## 📜 2. Our Standards  
-The following standards set the tone of conduct expected across all GSSoC’25 spaces:
+The following standards set the tone of conduct expected across all  spaces:
 ### ✅ Positive Behaviors  
 -  Use welcoming and inclusive language.  
 -  Respect different viewpoints and experiences.  
@@ -145,14 +145,14 @@ This Code of Conduct is adapted from:
 - [Contributor Covenant v3.0](https://www.contributor-covenant.org/version/3/0/)  
 - [GitHub Community Guidelines](https://docs.github.com/en/site-policy/github-terms/github-community-guidelines)  
 - [Open Source Guides](https://opensource.guide/)
-- [GSSoC Code of Conduct](https://gssoc-website-new-lovat.vercel.app/codeofconduct)
+
 
 Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).  
 
 ---
 
 ## 🌈 11. Conclusion  
-By committing to this **Code of Conduct**, we build a welcoming, inclusive, and respectful space for everyone involved in GSSoC. Let's ensure our community reflects the values we stand for — support, growth, and empowerment through open source.
+By committing to this **Code of Conduct**, we build a welcoming, inclusive, and respectful space for everyone involved . Let's ensure our community reflects the values we stand for — support, growth, and empowerment through open source.
 
 By participating, you agree to:  
 -  Respect & kindness.  
@@ -163,5 +163,5 @@ By participating, you agree to:
    
  
  ---
-## ✨Together, Let’s make **GSSoC’25** an inspiring, safe, and empowering journey for everyone! ✨  
+## ✨Together, Let’s make an inspiring, safe, and empowering journey for everyone! ✨  
 
