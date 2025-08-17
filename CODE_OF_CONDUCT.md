@@ -1,4 +1,4 @@
-# 🌱 Code of Conduct GSSoC'25 - MCA-STUDY-MATERIALS  
+# 🌱 Code of Conduct :- MCA-STUDY-MATERIALS  
  
 
 Welcome to **MCA-STUDY-MATERIALS** - a comprehensive, user-friendly, and modern web platform for sharing MCA (Master of Computer Applications) study materials, notes, and question papers. Built with accessibility, simplicity, and community collaboration at its core.
@@ -52,7 +52,6 @@ Beyond simply avoiding harm, participants are encouraged to:
 This Code of Conduct applies to:  
 -  GitHub repos, PRs, issues, and discussions.  
 -  Program chats (GitHub repositories/Discord).  
--  GSSoC’25 events, workshops, and meetings.  
 -  Issue tracking and pull request reviews as well as  public events and community meetups.
 
 
@@ -155,16 +154,14 @@ Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 ## 🌈 11. Conclusion  
 By committing to this **Code of Conduct**, we build a welcoming, inclusive, and respectful space for everyone involved in GSSoC. Let's ensure our community reflects the values we stand for — support, growth, and empowerment through open source.
 
-Together, let’s make GSSoC a safe and collaborative experience for all 💫  
-
 By participating, you agree to:  
 -  Respect & kindness.  
 -  Inclusivity & openness.  
 -  Collaboration & mentorship.  
 -  Growth & collective achievement.  
 
- Let’s make **GSSoC’25** an inspiring, safe, and empowering journey for everyone! ✨  
+   
  
  ---
-## ✨ Let’s make **GSSoC’25** an inspiring, safe, and empowering journey for everyone! ✨  
+## ✨Together, Let’s make **GSSoC’25** an inspiring, safe, and empowering journey for everyone! ✨  
 
