@@ -1,26 +1,26 @@
 function TheoryModules({ courseCode }) {
   // Special design for Laboratory courses
   const labCourses = {
-    '20MCA131': {
-      name: 'Programming Lab',
-      language: 'Python',
-      icon: '🐍',
-      color: 'from-green-400 to-blue-500',
-      bgColor: 'bg-green-50',
-      darkBgColor: 'dark:bg-gray-900',
-      borderColor: 'border-green-300',
-      description: 'Master Python programming with hands-on projects and real-world applications'
-    },
-    '20MCA133': {
-      name: 'Web Programming Lab',
-      language: 'HTML/CSS/JS',
-      icon: '🌐',
-      color: 'from-blue-400 to-purple-500',
-      bgColor: 'bg-blue-50',
-      darkBgColor: 'dark:bg-gray-900',
-      borderColor: 'border-blue-300',
-      description: 'Build stunning websites with modern web technologies and frameworks'
-    },
+    // '20MCA131': {
+    //   name: 'Programming Lab',
+    //   language: 'Python',
+    //   icon: '🐍',
+    //   color: 'from-green-400 to-blue-500',
+    //   bgColor: 'bg-green-50',
+    //   darkBgColor: 'dark:bg-gray-900',
+    //   borderColor: 'border-green-300',
+    //   description: 'Master Python programming with hands-on projects and real-world applications'
+    // },
+    // '20MCA133': {
+    //   name: 'Web Programming Lab',
+    //   language: 'HTML/CSS/JS',
+    //   icon: '🌐',
+    //   color: 'from-blue-400 to-purple-500',
+    //   bgColor: 'bg-blue-50',
+    //   darkBgColor: 'dark:bg-gray-900',
+    //   borderColor: 'border-blue-300',
+    //   description: 'Build stunning websites with modern web technologies and frameworks'
+    // },
     '20MCA135': {
       name: 'Data Structures Lab',
       language: 'C++',
@@ -183,7 +183,48 @@ function TheoryModules({ courseCode }) {
       </div>
     );
   }
-
+  /////
+  if (courseCode === '20MCA131') {
+  const modules = [
+    {
+      name: 'Programming Lab',
+     files: [
+        { name: 'Python.pdf', path: 'https://drive.google.com/uc?export=download&id=1xYNbAFwheESwjtMx84u5KaPIjO1Eac9A' },
+        { name: 'Tuples and Dictionary.pdf', path: 'https://drive.google.com/uc?export=download&id=1cTlqwN1Kw9fFHDSuIvUZ3_3bY-UFylQd' },
+        { name: 'OOPs Intro.pdf', path: 'https://drive.google.com/uc?export=download&id=1ssR5CCVWX2VslkubHE7qJzdIZHUyGsuD' },
+        { name: 'Class Part 1.pdf', path: 'https://drive.google.com/uc?export=download&id=1UJhXTiZS9g13-uVzUiwc7Nlfr6mCtmI6' },
+        { name: 'Class Part 2.pdf', path: 'https://drive.google.com/uc?export=download&id=16DsmJlEMQFzGzWb8QkLaDPJ63O4V8xX5' },
+        { name: 'Polymorphism.pdf', path: 'https://drive.google.com/uc?export=download&id=1d1mNjSC9vt-5ufo3qNABInNnMvVHkJCT' },
+        { name: 'Abstract Class.pdf', path: 'https://drive.google.com/uc?export=download&id=1502AadJB_t1HJmnb0JZTlJ3A-RyGvK0X' },
+        { name: 'File Handling.pdf', path: 'https://drive.google.com/uc?export=download&id=1yfe2C4x4KbBr6aN3ULd62ZnD9tsMRoTa' },
+        { name: 'Regular Expression.pdf', path: 'https://drive.google.com/uc?export=download&id=1Jtm3Fl4UDkt9UJGYak2TGXZe9dGBhyz_' },
+        { name: 'CSV.pdf', path: 'https://drive.google.com/uc?export=download&id=1Agog0G6UphqWLlxcqzDhm6RcArmOmEAT' },
+      ],
+    },
+  ];
+  return (
+      <div className="space-y-8">
+        {modules.map((module, idx) => (
+          <div key={module.name}>
+            <h3 className="font-bold text-lg mb-2 dark:text-white">{module.name}</h3>
+            <div className="space-y-2">
+              {module.files.map((file) => (
+                <a
+                  key={file.name}
+                  href={file.path}
+                  download
+                  className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] transition-all text-blue-700 dark:text-blue-400 font-semibold"
+                >
+                  <span className="icon-download text-lg"></span>
+                  <span>{file.name}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  } ///////
   // Custom structure for 20MCA102
   if (courseCode === '20MCA102') {
     const modules = [
