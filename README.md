@@ -4,6 +4,13 @@
 <img width="300" height="168" alt="images" src="https://github.com/user-attachments/assets/f8cd59b8-8d0d-4178-9787-9de165724d12" />
 
 
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=zoxilsi/mca-study-materials@github)](https://gitads.dev/v1/ad-track?source=zoxilsi/mca-study-materials@github)
+
+
+
+
+
 # 📚 MCA STUDY MATERIALS
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
