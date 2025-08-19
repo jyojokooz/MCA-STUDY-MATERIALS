@@ -42,7 +42,18 @@ function Header({
                   onChange={(e) => onSearchChange(e.target.value)}
                   className="w-full px-4 py-2.5 text-sm sm:text-base lg:text-sm rounded-lg border-2 border-black shadow-[2px_2px_0px_rgba(0,0,0,0.9)] focus:shadow-[3px_3px_0px_rgba(0,0,0,0.9)] transition-all bg-white dark:bg-gray-800 dark:text-white"
                 />
-                <div className="icon-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm sm:text-base lg:text-sm"></div>
+
+                {/* Icon / Clear button */}
+                {searchTerm ? (
+                  <button
+                    onClick={() => onSearchChange("")}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-red-500 text-lg"
+                  >
+                    ×
+                  </button>
+                ) : (
+                  <div className="icon-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm sm:text-base lg:text-sm"></div>
+                )}
               </div>
 
               {/* Buttons Container */}
