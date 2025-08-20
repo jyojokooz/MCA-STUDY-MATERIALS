@@ -686,9 +686,6 @@ We're incredibly grateful to all the amazing people who have contributed to maki
 <a href="https://github.com/zoxilsi">
   <img src="https://avatars.githubusercontent.com/u/176703579?v=4" width="80" alt="@zoxilsi" title="Project Founder & Lead Developer"/>
 </a>
-<a href="https://github.com/24mp2301">
-  <img src="https://avatars.githubusercontent.com/u/182845171?v=4" width="80" alt="@24mp2301" title="Core Contributor"/>
-</a>
 
 ### ✨ Contributors Wall
 
