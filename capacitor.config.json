@@ -1,0 +1,6 @@
+{
+  "appId": "com.studmate.mca",
+  "appName": "MCA Studmate",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
